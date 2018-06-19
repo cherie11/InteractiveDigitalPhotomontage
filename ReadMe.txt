@@ -1,3 +1,5 @@
+Initial CML multi-thread. No qt
+
 ========================================================================
     CONSOLE APPLICATION : PhotoMontage Project Overview
 ========================================================================
