@@ -169,10 +169,8 @@ double dataFn_min_likelihood(int p, int l, void *data) {
         }
     }
     float bin_avg=(bin_rgb[0]+bin_rgb[1]+bin_rgb[2])/3.0;
-    if(bin_avg==0){
-        return large_penalty;
-    }
-    return log(bin_avg/img_vec.size());   // make label approach to the max_likelihood
+
+    return (bin_avg/img_vec.size())*large_penalty;     // make label approach to the max_likelihood
     
 }
 
@@ -283,9 +281,49 @@ double dataFn_erase(int p, int l, void *data) {
         return large_penalty;
     }
     
+
+ }
+double euc_dist(const Vec3b & a, const Vec3b & b)
+{
+    Vec3b double_diff = a - b;
+    return sqrt( double_diff[0] * double_diff[0] + double_diff[1] * double_diff[1] + double_diff[2] * double_diff[2]);
+}
+double dataFn_max_diff(int p, int l, void *data) {
+    //Max Difference selection
+    __ExtraData * ptr_extra_data = (__ExtraData *)data;
+    cv::Mat & Label = ptr_extra_data->Label;
+    //cv::flann::Index * ptr_kdtree = ptr_extra_data->kdtree;
+    std::vector<cv::Mat> & img_vec = ptr_extra_data->Images;
+    
+    int width = Label.cols;
+    int height = Label.rows;
+    
+    int y = p / width;
+    int x = p % width;
+    
+    assert(l >= 0);
+    
+    double max_dis=0;
+    double dis;
+    
+    for(auto p: img_vec){
+        //std::cout<<img_vec[l].at<Vec3b>(y,x)<<std::endl;
+        dis=euc_dist(img_vec.back().at<Vec3b>(y,x),p.at<Vec3b>(y,x));
+        assert(dis>=0);
+        max_dis=dis>max_dis?dis:max_dis;
+    }
+    dis=euc_dist(img_vec.back().at<Vec3b>(y,x), img_vec[l].at<Vec3b>(y,x));
+    assert(max_dis>=dis);
+    //std::cout<<(max_dis-dis)*100<<std::endl;
+    return (-dis*dis);   // make label approach to the max_diff
+    
     
 }
 
+      
+      
+      
+      
 std::vector<Mat> GaussianBlurImages;
 double dataFn_contrast(int p, int l, void *data) {
     //Erase mode for max defferent pixel
@@ -319,15 +357,11 @@ double dataFn_contrast(int p, int l, void *data) {
         //size must be odd
     }
     
-    return -10*diff;
+    return -1000*diff;
 }
 
 
-double euc_dist(const Vec3b & a, const Vec3b & b)
-{
-    Vec3d double_diff = a - b;
-    return sqrt( double_diff[0] * double_diff[0] + double_diff[1] * double_diff[1] + double_diff[2] * double_diff[2]);
-}
+
 void cal_grad(const Mat & image,int x,int y,double grad[]){
     //return 6D grad with X,Y direction on all channel
     int flag=0;
@@ -555,7 +589,11 @@ void PhotoMontage::BuildSolveMRF( const std::vector<cv::Mat> & Images, const cv:
                 }
                 gc->setDataCost(&dataFn_contrast,&extra_data);
                 break;
-                
+             case MAX_DIFF:
+                std::cout<<"Using maxx diff penalty!"<<std::endl;
+                gc->setDataCost(&dataFn_max_diff,&extra_data);
+                break;
+               
                 
             default:
                 break;
@@ -582,12 +620,12 @@ void PhotoMontage::BuildSolveMRF( const std::vector<cv::Mat> & Images, const cv:
             }
         }
         delete gc;
-        VisCompositeImage( result_label, Images,1 );
-
+        
         VisResultLabelMap( result_label, n_label );
+        VisCompositeImage( result_label, Images );
         BuildSolveGradientFusion(Images, result_label);
         
-        VisCompositeImage( result_label, Images,2 );
+        
         
         
     }
@@ -700,7 +738,7 @@ void PhotoMontage::VisResultLabelMap( const cv::Mat & ResultLabel, int n_label )
     //waitKey(-1);
 }
 
-void PhotoMontage::VisCompositeImage( const cv::Mat & ResultLabel, const std::vector<cv::Mat> & Images,int type )
+void PhotoMontage::VisCompositeImage( const cv::Mat & ResultLabel, const std::vector<cv::Mat> & Images )
 {
     int width = ResultLabel.cols;
     int height = ResultLabel.rows;
@@ -713,17 +751,11 @@ void PhotoMontage::VisCompositeImage( const cv::Mat & ResultLabel, const std::ve
             composite_image.at<Vec3b>(y,x) = Images[ResultLabel.at<uchar>(y,x)].at<Vec3b>(y,x);
         }
     }
-    if(type == 1){
-        imwrite("composite_before_possion.png",composite_image);
-    }
-    else{
-        imshow("compositeimage",composite_image);
-        imwrite("compositeimage.png",composite_image);
-        waitKey(-1);
-    }
-   
-
     
+    //imshow("compositeimage",composite_image);
+    imwrite("compositeimage.png",composite_image);
+
+    //waitKey(-1);
 }
 
 cv::flann::Index *  PhotoMontage::AddInertiaConstraint( const cv::Mat & Label )
@@ -838,3 +870,4 @@ void PhotoMontage::SolveChannel( int channel_idx, int constraint, const cv::Mat 
     
     ///请同学们填写这里的代码，这里就是实验中所说的单颜色通道的Gradient Fusion
 }
+

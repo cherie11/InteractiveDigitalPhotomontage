@@ -8,39 +8,57 @@
 #include <vector>
 #include "PhotoMontage.h"
 #include <string>
+#include <ctime>
 using namespace cv;
-#include <iostream>
 using namespace std;
 
+#define DEBUG 0
 Mat read(String path){
     Mat res=imread(path);
     printf("%s\n",path.c_str() );
-    cout<<path<<endl;
+    int ratio=1;
+    cout<<path<<" "<<res.cols/ratio<<","<<res.rows/ratio<<endl;
     Mat out;
-    resize(res, out, Size(res.cols/2,res.rows/2),INTER_AREA);
+    resize(res, out, Size(res.cols/ratio,res.rows/ratio),INTER_AREA);
     return out;
 }
+
 int main(int argc, char* argv[])
 {
-    // int num_image = (argc-1)/2;
     std::vector<cv::Mat> Images;
-    std::vector<cv::Mat> Labels;
-
     ///请在此处读入N 张照片,例子如下:
-    // std::string fpath="/Users/apple/Desktop/计算摄影学/bug/";
-    for(int i=1;i<argc;i++){
-        Images.push_back(read(argv[i]));
-
-    }
-    // for(int i=num_image+1;i<argc;i++){
-    //      Labels.push_back(read(argv[i]));
-    // }
-   
+    
+    /*For auto max likelihood*/
+    std::string fpath="./img/cathedral/";
+    Images.push_back(read(fpath+"0.jpg"));
+    Images.push_back(read(fpath+"1.jpg"));
+    Images.push_back(read(fpath+"2.jpg"));
+    Images.push_back(read(fpath+"3.jpg"));
+    Images.push_back(read(fpath+"4.jpg"));
+    
+    /*for video composite*/
+    // std::string fpath="./img/video/";
+    // Images.push_back(read(fpath+"0.png"));
+    // Images.push_back(read(fpath+"3.png"));
+    // Images.push_back(read(fpath+"1.png"));
+    // Images.push_back(read("./img/result/video/max_likelihood背景图.png"));
     
     ///请在此处读入N 张Label,注意这些label里面,白色的代表用户的笔触,黑色的代表背景,例子如下:
-  
+    std::vector<cv::Mat> Labels;
+#if DEBUG
+    std::string fpath="./img/family/";
+    Images.push_back(read(fpath+"0.JPG"));
+    Images.push_back(read(fpath+"1.JPG"));
+    Images.push_back(read(fpath+"2.JPG"));
+    Images.push_back(read(fpath+"3.JPG"));
+    Images.push_back(read(fpath+"4.JPG"));
     
-    
+    Labels.push_back(read(fpath+"0.BMP"));
+    Labels.push_back(read(fpath+"1.BMP"));
+    Labels.push_back(read(fpath+"2.BMP"));
+    Labels.push_back(read(fpath+"3.BMP"));
+    Labels.push_back(read(fpath+"4.BMP"));
+#endif
     
     ///set all the labels to undefined
     cv::Mat Label(Images[0].rows, Images[0].cols, CV_8SC1);
@@ -63,11 +81,13 @@ int main(int argc, char* argv[])
     //         }
     //     }
     // }
-    
-    ///Run photomontage
     PhotoMontage PM;
-    PM.Run(Images,Label,7);
+    time_t start = std::time(NULL);
+    PM.Run(Images,Label,MAX_LIKEHOOD );
+    time_t end = std::time(NULL);
+    std::cout<<end-start<<std::endl;
     FILE * fp = fopen("finish.txt","w+");
+    fprintf(fp, "%d", int(end-start));
     fprintf(fp, "done\n" );
     return 0;
 }
