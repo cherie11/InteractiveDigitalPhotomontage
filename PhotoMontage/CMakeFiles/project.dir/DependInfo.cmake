@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp" "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/image.o"
-  "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp" "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/imageeditor.o"
-  "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp" "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/main.o"
-  "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp" "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/mainwindow.o"
-  "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp" "/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/project_autogen/mocs_compilation.o"
+  "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp" "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/image.o"
+  "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp" "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/imageeditor.o"
+  "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp" "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/main.o"
+  "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp" "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/mainwindow.o"
+  "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp" "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/project_autogen/mocs_compilation.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

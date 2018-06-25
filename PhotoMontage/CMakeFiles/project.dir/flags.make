@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -march=native -O3 -pthread   -fPIC -std=gnu++11
 
 CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage -I/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/include -isystem /usr/local/include -isystem /usr/local/include/opencv -isystem /anaconda3/include/qt -isystem /anaconda3/include/qt/QtWidgets -isystem /anaconda3/include/qt/QtGui -isystem /System/Library/Frameworks/OpenGL.framework/Headers -isystem /anaconda3/include/qt/QtCore -isystem /anaconda3/./mkspecs/macx-clang 
+CXX_INCLUDES = -I/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage -I/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/include -isystem /usr/local/include -isystem /usr/local/include/opencv -isystem /anaconda3/include/qt -isystem /anaconda3/include/qt/QtWidgets -isystem /anaconda3/include/qt/QtGui -isystem /System/Library/Frameworks/OpenGL.framework/Headers -isystem /anaconda3/include/qt/QtCore -isystem /anaconda3/./mkspecs/macx-clang 
 

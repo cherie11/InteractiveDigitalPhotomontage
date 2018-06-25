@@ -6,19 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp
 image.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/image.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/image.h
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/image.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/image.h
 QPixmap
 -
+opencv2/opencv.hpp
+-
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp
 imageeditor.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.h
 ui_imageeditor.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/ui_imageeditor.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/ui_imageeditor.h
 QToolBar
 -
 QVBoxLayout
@@ -27,14 +29,18 @@ QColorDialog
 -
 QMouseEvent
 -
+QCloseEvent
+-
 QPainter
 -
 QFileDialog
 -
 QMessageBox
 -
+iostream
+-
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.h
 QWidget
 -
 QLabel
@@ -46,19 +52,21 @@ QToolButton
 QPixmap
 -
 image.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/image.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/image.h
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp
 mainwindow.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.h
 QApplication
 -
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp
 mainwindow.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.h
 ui_mainwindow.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/ui_mainwindow.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/ui_mainwindow.h
+QInputDialog
+-
 QFileDialog
 -
 QMessageBox
@@ -83,8 +91,12 @@ cstdio
 -
 QProcess
 -
+iostream
+-
+QDebug
+-
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.h
 QMainWindow
 -
 vector
@@ -96,31 +108,33 @@ opencv2/highgui/highgui.hpp
 opencv2/imgproc/imgproc.hpp
 -
 imageeditor.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.h
+QTimer
+-
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/EWIEGA46WW/moc_imageeditor.cpp
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/EWIEGA46WW/moc_imageeditor.cpp
 ../../imageeditor.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/EWIEGA46WW/moc_mainwindow.cpp
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/EWIEGA46WW/moc_mainwindow.cpp
 ../../mainwindow.h
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.h
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp
 EWIEGA46WW/moc_imageeditor.cpp
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/EWIEGA46WW/moc_imageeditor.cpp
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/EWIEGA46WW/moc_imageeditor.cpp
 EWIEGA46WW/moc_mainwindow.cpp
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/EWIEGA46WW/moc_mainwindow.cpp
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/EWIEGA46WW/moc_mainwindow.cpp
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/ui_imageeditor.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/ui_imageeditor.h
 QtCore/QVariant
 -
 QtWidgets/QAction
@@ -133,16 +147,12 @@ QtWidgets/QHBoxLayout
 -
 QtWidgets/QHeaderView
 -
-QtWidgets/QLabel
--
 QtWidgets/QPushButton
--
-QtWidgets/QSpinBox
 -
 QtWidgets/QWidget
 -
 
-/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/ui_mainwindow.h
+/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/ui_mainwindow.h
 QtCore/QVariant
 -
 QtWidgets/QAction
@@ -165,6 +175,10 @@ QtWidgets/QScrollArea
 -
 QtWidgets/QWidget
 -
+
+/anaconda3/include/qt/QtCore/QDebug
+qdebug.h
+/anaconda3/include/qt/QtCore/qdebug.h
 
 /anaconda3/include/qt/QtCore/QProcess
 qprocess.h
@@ -938,6 +952,10 @@ QtCore/qpoint.h
 QtCore/qglobal.h
 -
 
+/anaconda3/include/qt/QtGui/QCloseEvent
+qevent.h
+/anaconda3/include/qt/QtGui/qevent.h
+
 /anaconda3/include/qt/QtGui/QIcon
 qicon.h
 /anaconda3/include/qt/QtGui/qicon.h
@@ -1268,6 +1286,36 @@ QtGui/qtguiglobal.h
 QtCore/qprocessordetection.h
 -
 
+/anaconda3/include/qt/QtGui/qtextcursor.h
+QtGui/qtguiglobal.h
+-
+QtCore/qstring.h
+-
+QtCore/qshareddata.h
+-
+QtGui/qtextformat.h
+-
+
+/anaconda3/include/qt/QtGui/qtextformat.h
+QtGui/qtguiglobal.h
+-
+QtGui/qcolor.h
+-
+QtGui/qfont.h
+-
+QtCore/qshareddata.h
+-
+QtCore/qvector.h
+-
+QtCore/qvariant.h
+-
+QtGui/qpen.h
+-
+QtGui/qbrush.h
+-
+QtGui/qtextoption.h
+-
+
 /anaconda3/include/qt/QtGui/qtextoption.h
 QtGui/qtguiglobal.h
 -
@@ -1375,6 +1423,10 @@ qboxlayout.h
 /anaconda3/include/qt/QtWidgets/QHeaderView
 qheaderview.h
 /anaconda3/include/qt/QtWidgets/qheaderview.h
+
+/anaconda3/include/qt/QtWidgets/QInputDialog
+qinputdialog.h
+/anaconda3/include/qt/QtWidgets/qinputdialog.h
 
 /anaconda3/include/qt/QtWidgets/QLabel
 qlabel.h
@@ -1582,6 +1634,16 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qabstractitemview.h
 -
 
+/anaconda3/include/qt/QtWidgets/qinputdialog.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtCore/qstring.h
+-
+QtWidgets/qlineedit.h
+-
+QtWidgets/qdialog.h
+-
+
 /anaconda3/include/qt/QtWidgets/qlabel.h
 QtWidgets/qtwidgetsglobal.h
 -
@@ -1616,6 +1678,18 @@ QtWidgets/qsizepolicy.h
 QtCore/qrect.h
 -
 limits.h
+-
+
+/anaconda3/include/qt/QtWidgets/qlineedit.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+QtGui/qtextcursor.h
+-
+QtCore/qstring.h
+-
+QtCore/qmargins.h
 -
 
 /anaconda3/include/qt/QtWidgets/qmainwindow.h

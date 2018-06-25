@@ -1,3 +1,0 @@
-./project_cml 0 0.JPG 3.JPG UNDEFINED 3.bmp
-
-./project_cml 0 0.JPG 3.JPG PLATE 3.bmp

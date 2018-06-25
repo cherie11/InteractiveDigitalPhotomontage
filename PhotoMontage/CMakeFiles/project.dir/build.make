@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.11.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage
+CMAKE_SOURCE_DIR = /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage
+CMAKE_BINARY_DIR = /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage
 
 # Include any dependencies generated for this target.
 include CMakeFiles/project.dir/depend.make
@@ -59,68 +59,68 @@ include CMakeFiles/project.dir/flags.make
 
 CMakeFiles/project.dir/imageeditor.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/imageeditor.o: imageeditor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project.dir/imageeditor.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/imageeditor.o -c /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project.dir/imageeditor.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/imageeditor.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp
 
 CMakeFiles/project.dir/imageeditor.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/imageeditor.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp > CMakeFiles/project.dir/imageeditor.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp > CMakeFiles/project.dir/imageeditor.i
 
 CMakeFiles/project.dir/imageeditor.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/imageeditor.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp -o CMakeFiles/project.dir/imageeditor.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/imageeditor.cpp -o CMakeFiles/project.dir/imageeditor.s
 
 CMakeFiles/project.dir/image.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/image.o: image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project.dir/image.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/image.o -c /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/project.dir/image.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/image.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp
 
 CMakeFiles/project.dir/image.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/image.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp > CMakeFiles/project.dir/image.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp > CMakeFiles/project.dir/image.i
 
 CMakeFiles/project.dir/image.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/image.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp -o CMakeFiles/project.dir/image.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/image.cpp -o CMakeFiles/project.dir/image.s
 
 CMakeFiles/project.dir/mainwindow.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/mainwindow.o: mainwindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project.dir/mainwindow.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/mainwindow.o -c /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/project.dir/mainwindow.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/mainwindow.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp
 
 CMakeFiles/project.dir/mainwindow.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/mainwindow.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp > CMakeFiles/project.dir/mainwindow.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp > CMakeFiles/project.dir/mainwindow.i
 
 CMakeFiles/project.dir/mainwindow.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/mainwindow.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp -o CMakeFiles/project.dir/mainwindow.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/mainwindow.cpp -o CMakeFiles/project.dir/mainwindow.s
 
 CMakeFiles/project.dir/main.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/main.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project.dir/main.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/main.o -c /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project.dir/main.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/main.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp
 
 CMakeFiles/project.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/main.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp > CMakeFiles/project.dir/main.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp > CMakeFiles/project.dir/main.i
 
 CMakeFiles/project.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/main.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp -o CMakeFiles/project.dir/main.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/main.cpp -o CMakeFiles/project.dir/main.s
 
 CMakeFiles/project.dir/project_autogen/mocs_compilation.o: CMakeFiles/project.dir/flags.make
 CMakeFiles/project.dir/project_autogen/mocs_compilation.o: project_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project.dir/project_autogen/mocs_compilation.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/project_autogen/mocs_compilation.o -c /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project.dir/project_autogen/mocs_compilation.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project.dir/project_autogen/mocs_compilation.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp
 
 CMakeFiles/project.dir/project_autogen/mocs_compilation.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project.dir/project_autogen/mocs_compilation.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp > CMakeFiles/project.dir/project_autogen/mocs_compilation.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp > CMakeFiles/project.dir/project_autogen/mocs_compilation.i
 
 CMakeFiles/project.dir/project_autogen/mocs_compilation.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project.dir/project_autogen/mocs_compilation.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp -o CMakeFiles/project.dir/project_autogen/mocs_compilation.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/project_autogen/mocs_compilation.cpp -o CMakeFiles/project.dir/project_autogen/mocs_compilation.s
 
 # Object files for target project
 project_OBJECTS = \
@@ -185,7 +185,7 @@ project: /usr/local/lib/libopencv_core.3.3.1.dylib
 project: /anaconda3/lib/libQt5Gui.5.9.5.dylib
 project: /anaconda3/lib/libQt5Core.5.9.5.dylib
 project: CMakeFiles/project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -198,6 +198,6 @@ CMakeFiles/project.dir/clean:
 .PHONY : CMakeFiles/project.dir/clean
 
 CMakeFiles/project.dir/depend:
-	cd /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/project.dir/depend
 

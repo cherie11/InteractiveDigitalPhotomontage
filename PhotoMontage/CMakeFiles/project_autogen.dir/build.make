@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.11.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage
+CMAKE_SOURCE_DIR = /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage
+CMAKE_BINARY_DIR = /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage
 
 # Utility rule file for project_autogen.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMon
 include CMakeFiles/project_autogen.dir/progress.make
 
 CMakeFiles/project_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target project"
-	/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_autogen /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project_autogen.dir/AutogenInfo.cmake ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target project"
+	/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_autogen /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project_autogen.dir/AutogenInfo.cmake ""
 
 project_autogen: CMakeFiles/project_autogen
 project_autogen: CMakeFiles/project_autogen.dir/build.make
@@ -72,6 +72,6 @@ CMakeFiles/project_autogen.dir/clean:
 .PHONY : CMakeFiles/project_autogen.dir/clean
 
 CMakeFiles/project_autogen.dir/depend:
-	cd /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/project_autogen.dir/depend
 

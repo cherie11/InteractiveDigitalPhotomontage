@@ -176,7 +176,7 @@ double dataFn_min_likelihood(int p, int l, void *data) {
     }
     float bin_avg=(bin_rgb[0]+bin_rgb[1]+bin_rgb[2])/3.0;
 
-    return (bin_avg/img_vec.size())*large_penalty;     // make label approach to the max_likelihood
+    return (bin_avg/img_vec.size())*large_penalty;     // make label approach to the min_likelihood
     
 }
 
@@ -335,14 +335,14 @@ double dataFn_max_diff(int p, int l, void *data) {
     
     for(auto p: img_vec){
         //std::cout<<img_vec[l].at<Vec3b>(y,x)<<std::endl;
-        dis=euc_dist(img_vec.back().at<Vec3b>(y,x),p.at<Vec3b>(y,x));
+        dis=norm(img_vec.back().at<Vec3b>(y,x),p.at<Vec3b>(y,x));
         assert(dis>=0);
         max_dis=dis>max_dis?dis:max_dis;
     }
-    dis=euc_dist(img_vec.back().at<Vec3b>(y,x), img_vec[l].at<Vec3b>(y,x));
+    dis=norm(img_vec.back().at<Vec3b>(y,x), img_vec[l].at<Vec3b>(y,x));
     assert(max_dis>=dis);
     //std::cout<<(max_dis-dis)*100<<std::endl;
-    return (-dis*dis);   // make label approach to the max_diff
+    return (max_dis-dis)*50;   // make label approach to the max_diff
     
     
 }
@@ -353,7 +353,7 @@ double dataFn_max_diff(int p, int l, void *data) {
       
 std::vector<Mat> GaussianBlurImages;
 double dataFn_contrast(int p, int l, void *data) {
-    //Erase mode for max defferent pixel
+    //Erase mode for max contrast pixel
     __ExtraData * ptr_extra_data = (__ExtraData *)data;
     //cv::flann::Index * ptr_kdtree = ptr_extra_data->kdtree;
         cv::Mat & Label = ptr_extra_data->Label;
@@ -511,7 +511,7 @@ double smoothFn(int p, int q, int lp, int lq, void * data)
     }
     
     diff_grad1=sqrt(diff_grad1);
-    int coefficient = 10;
+    int coefficient = 2;
     if(user_coefficient > 0){
         coefficient*=user_coefficient;
     }
@@ -525,13 +525,13 @@ double smoothFn(int p, int q, int lp, int lq, void * data)
         else if(currentMode == 6){
             coefficient *=5 ;
         } 
-        else if (currentMode == 4){
+        else if (currentMode == 4 || currentMode == MAX_DIFF){
             coefficient *= 10;
         }
     }
     
     //std::cout<<(X_term1 + X_term2)<<" "<<diff_grad<<"  "<<diff_grad1<<std::endl;
-    return ((X_term1 + X_term2) * coefficient + diff_grad * coefficient + diff_grad1 * coefficient)/5;
+    return ((X_term1 + X_term2) * coefficient + diff_grad * coefficient + diff_grad1 * coefficient);
 #endif
     
     
