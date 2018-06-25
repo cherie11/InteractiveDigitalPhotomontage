@@ -6,12 +6,13 @@
 
 #define USER_SPECIFY 0
 #define MAX_LUMIN 1
-#define ERASE 2
-#define MAX_LIKEHOOD 3
-#define CONTRAST 4
+#define MIN_LUMIN 2
+#define ERASE 3
+#define MAX_LIKEHOOD 4
 #define MIN_LIKEHOOD 5
-#define MIN_LUMIN 6
+#define CONTRAST 6
 #define MAX_DIFF 7
+#define USER_SPECIFY_P 8
 
 
 
@@ -30,7 +31,8 @@ public:
     static void* thread_function(void *arg_raw);
     
 public:
-    void Run(const std::vector<cv::Mat> & Images, const cv::Mat & Label,int mode=USER_SPECIFY);
+
+    void Run(const std::vector<cv::Mat> & Images, const cv::Mat & Label,int mode=USER_SPECIFY,double user_coe = 0);
 private:
     cv::flann::Index * AddInertiaConstraint( const cv::Mat & Label );
 public:
@@ -61,6 +63,7 @@ public:
     
     enum
     {
-        undefined = -1
+        undefined = -1,
+        plate = 1,
     };
 };

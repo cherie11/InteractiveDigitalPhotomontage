@@ -6,11 +6,41 @@ CMakeFiles/project.dir/image.o
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/image.h
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPixmap
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpixmap.h
+ /usr/local/include/opencv2/calib3d/calib3d.hpp
+ /usr/local/include/opencv2/contrib/contrib.hpp
+ /usr/local/include/opencv2/contrib/openfabmap.hpp
+ /usr/local/include/opencv2/contrib/retina.hpp
+ /usr/local/include/opencv2/core/affine.hpp
+ /usr/local/include/opencv2/core/core.hpp
+ /usr/local/include/opencv2/core/core_c.h
+ /usr/local/include/opencv2/core/mat.hpp
+ /usr/local/include/opencv2/core/operations.hpp
+ /usr/local/include/opencv2/core/types_c.h
+ /usr/local/include/opencv2/core/version.hpp
+ /usr/local/include/opencv2/features2d/features2d.hpp
+ /usr/local/include/opencv2/flann/config.h
+ /usr/local/include/opencv2/flann/defines.h
+ /usr/local/include/opencv2/flann/miniflann.hpp
+ /usr/local/include/opencv2/highgui/highgui.hpp
+ /usr/local/include/opencv2/highgui/highgui_c.h
+ /usr/local/include/opencv2/imgproc/imgproc.hpp
+ /usr/local/include/opencv2/imgproc/imgproc_c.h
+ /usr/local/include/opencv2/imgproc/types_c.h
+ /usr/local/include/opencv2/ml/ml.hpp
+ /usr/local/include/opencv2/objdetect/objdetect.hpp
+ /usr/local/include/opencv2/opencv.hpp
+ /usr/local/include/opencv2/opencv_modules.hpp
+ /usr/local/include/opencv2/photo/photo.hpp
+ /usr/local/include/opencv2/photo/photo_c.h
+ /usr/local/include/opencv2/video/background_segm.hpp
+ /usr/local/include/opencv2/video/tracking.hpp
+ /usr/local/include/opencv2/video/video.hpp
 CMakeFiles/project.dir/imageeditor.o
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/image.h
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/imageeditor.cpp
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/imageeditor.h
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/ui_imageeditor.h
+ /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QCloseEvent
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QMouseEvent
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPainter
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPixmap
@@ -35,11 +65,42 @@ CMakeFiles/project.dir/imageeditor.o
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtoolbar.h
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qtoolbutton.h
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
+ /usr/local/include/opencv2/calib3d/calib3d.hpp
+ /usr/local/include/opencv2/contrib/contrib.hpp
+ /usr/local/include/opencv2/contrib/openfabmap.hpp
+ /usr/local/include/opencv2/contrib/retina.hpp
+ /usr/local/include/opencv2/core/affine.hpp
+ /usr/local/include/opencv2/core/core.hpp
+ /usr/local/include/opencv2/core/core_c.h
+ /usr/local/include/opencv2/core/mat.hpp
+ /usr/local/include/opencv2/core/operations.hpp
+ /usr/local/include/opencv2/core/types_c.h
+ /usr/local/include/opencv2/core/version.hpp
+ /usr/local/include/opencv2/features2d/features2d.hpp
+ /usr/local/include/opencv2/flann/config.h
+ /usr/local/include/opencv2/flann/defines.h
+ /usr/local/include/opencv2/flann/miniflann.hpp
+ /usr/local/include/opencv2/highgui/highgui.hpp
+ /usr/local/include/opencv2/highgui/highgui_c.h
+ /usr/local/include/opencv2/imgproc/imgproc.hpp
+ /usr/local/include/opencv2/imgproc/imgproc_c.h
+ /usr/local/include/opencv2/imgproc/types_c.h
+ /usr/local/include/opencv2/ml/ml.hpp
+ /usr/local/include/opencv2/objdetect/objdetect.hpp
+ /usr/local/include/opencv2/opencv.hpp
+ /usr/local/include/opencv2/opencv_modules.hpp
+ /usr/local/include/opencv2/photo/photo.hpp
+ /usr/local/include/opencv2/photo/photo_c.h
+ /usr/local/include/opencv2/video/background_segm.hpp
+ /usr/local/include/opencv2/video/tracking.hpp
+ /usr/local/include/opencv2/video/video.hpp
 CMakeFiles/project.dir/main.o
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/image.h
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/imageeditor.h
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/main.cpp
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/mainwindow.h
+ /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QTimer
+ /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qtimer.h
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPixmap
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpixmap.h
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication
@@ -89,9 +150,11 @@ CMakeFiles/project.dir/mainwindow.o
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/mainwindow.cpp
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/mainwindow.h
  /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/ui_mainwindow.h
+ /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QDebug
  /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QProcess
  /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString
  /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QTimer
+ /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qdebug.h
  /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qprocess.h
  /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
  /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qtimer.h
@@ -103,6 +166,7 @@ CMakeFiles/project.dir/mainwindow.o
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpixmap.h
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QFileDialog
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QHBoxLayout
+ /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QInputDialog
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLabel
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox
@@ -112,6 +176,7 @@ CMakeFiles/project.dir/mainwindow.o
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qboxlayout.h
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h
+ /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qinputdialog.h
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
@@ -155,6 +220,8 @@ CMakeFiles/project.dir/project_autogen/moc_compilation.o
  /Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/project_autogen/EWIEGA46WW/moc_imageeditor.cpp
  /Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/project_autogen/EWIEGA46WW/moc_mainwindow.cpp
  /Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/project_autogen/moc_compilation.cpp
+ /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QTimer
+ /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qtimer.h
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QPixmap
  /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qpixmap.h
  /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLabel

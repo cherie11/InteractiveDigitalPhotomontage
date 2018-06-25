@@ -13,6 +13,8 @@ image.h
 /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/image.h
 QPixmap
 -
+opencv2/opencv.hpp
+-
 
 /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/imageeditor.cpp
 imageeditor.h
@@ -27,11 +29,15 @@ QColorDialog
 -
 QMouseEvent
 -
+QCloseEvent
+-
 QPainter
 -
 QFileDialog
 -
 QMessageBox
+-
+iostream
 -
 
 /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/imageeditor.h
@@ -59,6 +65,8 @@ mainwindow.h
 /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/mainwindow.h
 ui_mainwindow.h
 /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/ui_mainwindow.h
+QInputDialog
+-
 QFileDialog
 -
 QMessageBox
@@ -83,6 +91,10 @@ cstdio
 -
 QProcess
 -
+iostream
+-
+QDebug
+-
 
 /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/mainwindow.h
 QMainWindow
@@ -97,6 +109,8 @@ opencv2/imgproc/imgproc.hpp
 -
 imageeditor.h
 /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/imageeditor.h
+QTimer
+-
 
 /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage/ui_imageeditor.h
 QtCore/QVariant
@@ -111,11 +125,7 @@ QtWidgets/QHBoxLayout
 -
 QtWidgets/QHeaderView
 -
-QtWidgets/QLabel
--
 QtWidgets/QPushButton
--
-QtWidgets/QSpinBox
 -
 QtWidgets/QWidget
 -
@@ -166,6 +176,10 @@ EWIEGA46WW/moc_imageeditor.cpp
 EWIEGA46WW/moc_mainwindow.cpp
 /Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/project_autogen/EWIEGA46WW/moc_mainwindow.cpp
 
+/Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QDebug
+qdebug.h
+/Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qdebug.h
+
 /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QProcess
 qprocess.h
 /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qprocess.h
@@ -177,6 +191,38 @@ qstring.h
 /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/QTimer
 qtimer.h
 /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qtimer.h
+
+/Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qdebug.h
+QtCore/qalgorithms.h
+-
+QtCore/qhash.h
+-
+QtCore/qlist.h
+-
+QtCore/qmap.h
+-
+QtCore/qpair.h
+-
+QtCore/qtextstream.h
+-
+QtCore/qstring.h
+-
+QtCore/qvector.h
+-
+QtCore/qset.h
+-
+QtCore/qcontiguouscache.h
+-
+QtCore/qsharedpointer.h
+-
+vector
+-
+list
+-
+map
+-
+utility
+-
 
 /Users/apple/Qt/5.8/clang_64/lib/QtCore.framework/Headers/qprocess.h
 QtCore/qiodevice.h
@@ -215,6 +261,10 @@ QtCore/qobject.h
 -
 chrono
 -
+
+/Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QCloseEvent
+qevent.h
+/Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/qevent.h
 
 /Users/apple/Qt/5.8/clang_64/lib/QtGui.framework/Headers/QIcon
 qicon.h
@@ -366,6 +416,10 @@ qfiledialog.h
 qboxlayout.h
 /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qboxlayout.h
 
+/Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QInputDialog
+qinputdialog.h
+/Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qinputdialog.h
+
 /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QLabel
 qlabel.h
 /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
@@ -446,6 +500,16 @@ QtCore/qstring.h
 QtCore/qurl.h
 -
 QtWidgets/qdialog.h
+-
+
+/Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qinputdialog.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qdialog.h
+-
+QtCore/qstring.h
+-
+QtWidgets/qlineedit.h
 -
 
 /Users/apple/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qlabel.h

@@ -1,29 +1,39 @@
 #include "image.h"
 
-Image::Image()
-{
-    img=new QPixmap;
-    imgEdit=new QPixmap;
-    edited=false;
+Image::Image() {
+	img = new QPixmap;
+	imgEdit = new QPixmap;
+	imgLabel = new QPixmap;
 }
 
 Image::Image(QPixmap *pix){
-    img=new QPixmap;
-    *img=*pix;
-    imgEdit=new QPixmap;
-    edited=false;
+	img = new QPixmap;
+	*img = *pix;
+	imgEdit = new QPixmap;
+	*imgEdit = *pix;
+	imgLabel = new QPixmap(img->size());
+	imgLabel->fill(Qt::black);
 }
 
 bool Image::isEdited(){
-    return edited;
+	return img->cacheKey() != imgEdit->cacheKey();
 }
 
-void Image::setImageEdit(QPixmap *pix){
-    *imgEdit=*pix;
-    edited=true;
+void Image::setImage(QPixmap *pix) {
+	*img = *pix;
+	*imgEdit = *pix;
+	imgLabel = new QPixmap(img->size());
+	imgLabel->fill(Qt::black);
+}
+
+void Image::setImageEdit(QPixmap *edit, QPixmap *label){
+	*imgEdit = *edit;
+	*imgLabel = *label;
 }
 
 void Image::deleteImageEdit(){
-    imgEdit=new QPixmap;
-    edited=false;
+	imgEdit = new QPixmap;
+	*imgEdit = *img;
+	imgLabel = new QPixmap(img->size());
+	imgLabel->fill(Qt::black);
 }

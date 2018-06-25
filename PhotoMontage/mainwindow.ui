@@ -10,17 +10,29 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>泊松图像编辑</string>
+   <string>交互式数字蒙太奇</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="curImage">
+   <widget class="QLabel" name="compositeImage">
     <property name="geometry">
      <rect>
       <x>120</x>
       <y>20</y>
       <width>560</width>
-      <height>315</height>
+      <height>320</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -41,9 +53,6 @@
     <property name="midLineWidth">
      <number>2</number>
     </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;请导入图片&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
@@ -52,9 +61,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>360</y>
+      <y>359</y>
       <width>760</width>
-      <height>200</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -78,7 +87,7 @@
        <x>0</x>
        <y>0</y>
        <width>754</width>
-       <height>194</height>
+       <height>195</height>
       </rect>
      </property>
     </widget>
@@ -97,31 +106,9 @@
     <property name="title">
      <string>文件</string>
     </property>
-    <widget class="QMenu" name="mode">
-     <property name="title">
-      <string>生成模式</string>
-     </property>
-     <addaction name="mode0"/>
-     <addaction name="mode1"/>
-     <addaction name="mode2"/>
-    </widget>
     <addaction name="openFile"/>
     <addaction name="remove"/>
     <addaction name="removeAll"/>
-    <addaction name="separator"/>
-    <addaction name="mode"/>
-    <addaction name="generate"/>
-   </widget>
-   <widget class="QMenu" name="edit">
-    <property name="title">
-     <string>编辑</string>
-    </property>
-    <addaction name="startEdit"/>
-    <addaction name="viewEdit"/>
-    <addaction name="deleteEdit"/>
-    <addaction name="deleteAllEdit"/>
-    <addaction name="separator"/>
-    <addaction name="outputEdit"/>
    </widget>
    <widget class="QMenu" name="help">
     <property name="title">
@@ -130,8 +117,38 @@
     <addaction name="helper"/>
     <addaction name="aboutUs"/>
    </widget>
+   <widget class="QMenu" name="mode">
+    <property name="title">
+     <string>模式</string>
+    </property>
+    <addaction name="mode0"/>
+    <addaction name="mode1"/>
+    <addaction name="mode2"/>
+    <addaction name="mode3"/>
+    <addaction name="mode4"/>
+    <addaction name="mode5"/>
+    <addaction name="mode6"/>
+    <addaction name="mode7"/>
+    <addaction name="mode8"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="generate"/>
+    <addaction name="viewResult"/>
+    <addaction name="saveResult"/>
+   </widget>
+   <widget class="QMenu" name="adjParam">
+    <property name="title">
+     <string>调参</string>
+    </property>
+    <addaction name="inputParam"/>
+   </widget>
    <addaction name="file"/>
-   <addaction name="edit"/>
+   <addaction name="menu"/>
+   <addaction name="mode"/>
+   <addaction name="adjParam"/>
    <addaction name="help"/>
   </widget>
   <action name="openFile">
@@ -140,22 +157,6 @@
    </property>
    <property name="text">
     <string>导入图片</string>
-   </property>
-  </action>
-  <action name="saveFile">
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>保存图片</string>
-   </property>
-  </action>
-  <action name="saveAll">
-   <property name="text">
-    <string>保存全部</string>
    </property>
   </action>
   <action name="generate">
@@ -173,16 +174,6 @@
     <string>关于我们</string>
    </property>
   </action>
-  <action name="deleteEdit">
-   <property name="text">
-    <string>删除编辑</string>
-   </property>
-  </action>
-  <action name="deleteAllEdit">
-   <property name="text">
-    <string>删除全部</string>
-   </property>
-  </action>
   <action name="remove">
    <property name="text">
     <string>移除图片</string>
@@ -191,26 +182,6 @@
   <action name="removeAll">
    <property name="text">
     <string>移除全部</string>
-   </property>
-  </action>
-  <action name="startEdit">
-   <property name="text">
-    <string>启动编辑</string>
-   </property>
-  </action>
-  <action name="viewEdit">
-   <property name="text">
-    <string>查看编辑</string>
-   </property>
-  </action>
-  <action name="outputEdit">
-   <property name="text">
-    <string>导出编辑</string>
-   </property>
-  </action>
-  <action name="action1">
-   <property name="text">
-    <string>1</string>
    </property>
   </action>
   <action name="mode0">
@@ -225,7 +196,57 @@
   </action>
   <action name="mode2">
    <property name="text">
+    <string>MIN_LUMIN</string>
+   </property>
+  </action>
+  <action name="mode3">
+   <property name="text">
     <string>ERASE</string>
+   </property>
+  </action>
+  <action name="mode4">
+   <property name="text">
+    <string>MAX_LIKEHOOD</string>
+   </property>
+  </action>
+  <action name="mode5">
+   <property name="text">
+    <string>MIN_LIKEHOOD</string>
+   </property>
+  </action>
+  <action name="mode6">
+   <property name="text">
+    <string>CONTRAST</string>
+   </property>
+  </action>
+  <action name="mode7">
+   <property name="text">
+    <string>MAX_DIFF</string>
+   </property>
+  </action>
+  <action name="mode8">
+   <property name="text">
+    <string>USER_SPECIFY_P</string>
+   </property>
+  </action>
+  <action name="changeBase">
+   <property name="text">
+    <string>更换底图</string>
+   </property>
+  </action>
+  <action name="viewResult">
+   <property name="text">
+    <string>查看结果</string>
+   </property>
+  </action>
+  <action name="saveResult">
+   <property name="text">
+    <string>保存结果</string>
+   </property>
+  </action>
+  <action name="inputParam">
+   <property name="text">
+    <string>输入参数</string>
    </property>
   </action>
  </widget>

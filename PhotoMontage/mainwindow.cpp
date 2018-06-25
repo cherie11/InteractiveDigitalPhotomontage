@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <QInputDialog>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QImage>
@@ -13,301 +13,289 @@
 #include <QTimer>
 #include <cstdio>
 #include <QProcess>
-
-
-void MainWindow::setUIImageEditActionsDisabled(bool b){
-ui->viewEdit->setDisabled(b);
-ui->deleteEdit->setDisabled(b);
-ui->deleteAllEdit->setDisabled(b);
-ui->outputEdit->setDisabled(b);
-}
-
+#include <iostream>
+#include <QDebug>
+QString param_text = " 0 ";
 void MainWindow::setMode(){
-QAction * sa = (QAction*)sender() ;
-QString   modeName = sa->objectName();
-QString index=modeName.right(1);
-int ID=index.toInt();
-
-if( ID == 0 ){
-    mode =0;
-    ui->mode0->setText("USER_SPECIFY *");
-    ui->mode1->setText("MAX_LUMIN");
-    ui->mode2->setText("ERASE");
+    QAction *sa = (QAction*)sender();
+    QString modeName = sa->objectName();
+    QString index = modeName.right(1);
+    mode = index.toInt();
+    QString modeText[] = {
+        "USER_SPECIFY",
+        "MAX_LUMIN",
+        "MIN_LUMIN",
+        "ERASE",
+        "MAX_LIKEHOOD",
+        "MIN_LIKEHOOD",
+        "CONTRAST",
+        "MAX_DIFF",
+        "USER_SPECIFY_P"
+    };
+    modeText[mode].append(" *");
+    ui->mode0->setText(modeText[0]);
+    ui->mode1->setText(modeText[1]);
+    ui->mode2->setText(modeText[2]);
+    ui->mode3->setText(modeText[3]);
+    ui->mode4->setText(modeText[4]);
+    ui->mode5->setText(modeText[5]);
+    ui->mode6->setText(modeText[6]);
+    ui->mode7->setText(modeText[7]);
+    ui->mode8->setText(modeText[8]);
 }
-else if( ID == 1 )
-{
-    mode = 1;
-    ui->mode0->setText("USER_SPECIFY");
-    ui->mode1->setText("MAX_LUMIN *");
-    ui->mode2->setText("ERASE");
-}
-else{
-    mode = 2;
-    ui->mode0->setText("USER_SPECIFY");
-    ui->mode1->setText("MAX_LUMIN");
-    ui->mode2->setText("ERASE *");
-}
 
+void MainWindow::setParam(){
+    bool isOK;
+    param_text = QInputDialog::getText(NULL, "输入参数",
+                                                   "",
+                                                   QLineEdit::Normal,
+                                                   "",
+                                                   &isOK);
+    if(isOK) {
 
+    /*do what you want*/
+    }
 }
 
 void MainWindow::init(){
-imgs.clear();
-curId=-1;
-mode = 0;
-isEdit=false;
-ui->setupUi(this);
-connect(ui->openFile,SIGNAL(triggered()),this,SLOT(openImage()));
-connect(ui->remove,SIGNAL(triggered()),this,SLOT(removeCurrentImage()));
-connect(ui->removeAll,SIGNAL(triggered()),this,SLOT(removeAllImages()));
-connect(ui->generate,SIGNAL(triggered()),this,SLOT(generatePoisson()));
-connect(ui->startEdit,SIGNAL(triggered()),this,SLOT(openEditor()));
-connect(ui->viewEdit,SIGNAL(triggered()),this,SLOT(viewEdit()));
-connect(ui->deleteEdit,SIGNAL(triggered()),this,SLOT(deleteCurrentImageEdit()));
-connect(ui->deleteAllEdit,SIGNAL(triggered()),this,SLOT(deleteAllImageEdits()));
-connect(ui->outputEdit,SIGNAL(triggered()),this,SLOT(saveImageEdit()));
-connect(ui->helper,SIGNAL(triggered()),this,SLOT(showUserHelp()));
-connect(ui->aboutUs,SIGNAL(triggered()),this,SLOT(showAboutUs()));
-connect(ui->mode0,SIGNAL(triggered()),this,SLOT(setMode()));
-connect(ui->mode1,SIGNAL(triggered()),this,SLOT(setMode()));
-connect(ui->mode2,SIGNAL(triggered()),this,SLOT(setMode()));
-ui->mode0->setText("USER_SPECIFY *");
-ui->remove->setDisabled(true);
-ui->removeAll->setDisabled(true);
-//ui->generate->setDisabled(true);
-ui->startEdit->setDisabled(true);
-setUIImageEditActionsDisabled(true);
-timer=new QTimer(this);
-connect(timer,SIGNAL(timeout()),this,SLOT(checkGenerateImage()));
+    imgs.clear();
+    curId=-1;
+    mode = 0;
+    isEdit=false;
+    editorOpened = false;
+    ui->setupUi(this);
+    connect(ui->openFile,SIGNAL(triggered()),this,SLOT(openImages()));
+    connect(ui->remove,SIGNAL(triggered()),this,SLOT(removeCurrentImage()));
+    connect(ui->removeAll,SIGNAL(triggered()),this,SLOT(removeAllImages()));
+    connect(ui->generate,SIGNAL(triggered()),this,SLOT(generatePoisson()));
+	connect(ui->viewResult, SIGNAL(triggered()), this, SLOT(openImageResult()));
+	connect(ui->saveResult, SIGNAL(triggered()), this, SLOT(saveImageResult()));
+    connect(ui->helper,SIGNAL(triggered()),this,SLOT(showUserHelp()));
+    connect(ui->aboutUs,SIGNAL(triggered()),this,SLOT(showAboutUs()));
+    connect(ui->mode0, SIGNAL(triggered()), this, SLOT(setMode()));
+    connect(ui->mode1, SIGNAL(triggered()), this, SLOT(setMode()));
+    connect(ui->mode2, SIGNAL(triggered()), this, SLOT(setMode()));
+    connect(ui->mode3, SIGNAL(triggered()), this, SLOT(setMode()));
+    connect(ui->mode4, SIGNAL(triggered()), this, SLOT(setMode()));
+    connect(ui->mode5, SIGNAL(triggered()), this, SLOT(setMode()));
+    connect(ui->mode6, SIGNAL(triggered()), this, SLOT(setMode()));
+    connect(ui->mode7, SIGNAL(triggered()), this, SLOT(setMode()));
+    connect(ui->mode8, SIGNAL(triggered()), this, SLOT(setMode()));
+    connect(ui->inputParam,SIGNAL(triggered()),this,SLOT(setParam()));
+    // Keyboard shortcuts
+    ui->mode0->setShortcut(Qt::Key_0);
+    ui->mode1->setShortcut(Qt::Key_1);
+    ui->mode2->setShortcut(Qt::Key_2);
+    ui->mode3->setShortcut(Qt::Key_3);
+    ui->mode4->setShortcut(Qt::Key_4);
+    ui->mode5->setShortcut(Qt::Key_5);
+    ui->mode6->setShortcut(Qt::Key_6);
+    ui->mode7->setShortcut(Qt::Key_7);
+    ui->mode8->setShortcut(Qt::Key_8);
+    ui->generate->setShortcut(Qt::Key_G);
+    ui->openFile->setShortcut(Qt::Key_O);
+    ui->remove->setShortcut(QKeySequence::Delete);
+	ui->viewResult->setShortcut(Qt::Key_V);
+	ui->saveResult->setShortcut(QKeySequence::Save);
 
-
+    ui->mode0->setText("USER_SPECIFY *");
+    ui->remove->setDisabled(true);
+    ui->removeAll->setDisabled(true);
+    ui->generate->setDisabled(true);
+	ui->viewResult->setDisabled(true);
+	ui->saveResult->setDisabled(true);
+    timer=new QTimer(this);
+    connect(timer,SIGNAL(timeout()),this,SLOT(checkGenerateImage()));
 }
 
 MainWindow::MainWindow(QWidget *parent) :
-QMainWindow(parent),
-ui(new Ui::MainWindow)
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
 {
-init();
+    init();
 }
 
 MainWindow::~MainWindow()
 {
-delete ui;
+    delete ui;
+}
+
+void MainWindow::moveEvent(QMoveEvent *) {
+    if (editorOpened) {
+        iedit->move(this->pos().x() + 800, this->pos().y());
+    }
 }
 
 void MainWindow::openEditor(){
-iedit=new ImageEditor();
-if(imgs[curId].isEdited()){
-    iedit->setImage(imgs[curId].imgEdit);
-}else{
-    iedit->setImage(imgs[curId].img);
-}
-connect(iedit,SIGNAL(sendEdit(QPixmap*)),this,SLOT(receiveEdit(QPixmap*)));
-iedit->show();
-}
-
-void MainWindow::showImage(){
-QPushButton *btn=(QPushButton*)sender();
-QString btnName = btn->objectName();
-QString index=btnName.right(1);
-curId=index.toInt();
-if(curId>=0&&(unsigned int)curId<imgs.size()){
-    if(isEdit){
-        QPixmap scaledPixmap=imgs[curId].imgEdit->scaled(QSize(560,315),Qt::KeepAspectRatio);
-        ui->curImage->setPixmap(scaledPixmap);
-    }else{
-        QPixmap scaledPixmap=imgs[curId].img->scaled(QSize(560,315),Qt::KeepAspectRatio);
-        ui->curImage->setPixmap(scaledPixmap);
+    QPushButton *btn = (QPushButton*)sender();
+    QString btnName = btn->objectName();
+    QString index = btnName.right(1);
+    curId = index.toInt();
+    if (!editorOpened) {
+        iedit = new ImageEditor();
+        iedit->move(this->pos().x() + 800, this->pos().y());
+        editorOpened = true;
+        connect(iedit, SIGNAL(sendEdit(QPixmap*, QPixmap*)), this, SLOT(receiveEdit(QPixmap*, QPixmap*)));
+        connect(iedit, SIGNAL(editorClosed()), this, SLOT(setEditorClosed()));
     }
-
+	iedit->setImageOnEditor(imgs[curId]);
+    iedit->show();
 }
+
+void MainWindow::setEditorClosed() {
+    editorOpened = false;
 }
 
 void MainWindow::displayImages(){
-QHBoxLayout *l=new QHBoxLayout;
-QPushButton* pushButton;
-QString str("pushButton %1");
-QWidget *widget=new QWidget(this);
-for (unsigned int i=0; i<imgs.size(); i++){
-    pushButton = new QPushButton(widget);
-    pushButton->setMinimumSize(256,144);
-    pushButton->setMaximumSize(256,144);
-    pushButton->setObjectName(str.arg(i));
-    QPixmap scaledPixmap=imgs[i].img->scaled(QSize(256,144),Qt::KeepAspectRatio);
-    pushButton->setIcon(QIcon(scaledPixmap));
-    pushButton->setIconSize(QSize(240,135));
-    connect(pushButton,SIGNAL(clicked()),this,SLOT(showImage()));
-    l->addWidget(pushButton);
-}
-widget->setLayout(l);
-ui->scrollArea->setWidget(widget);
+    QHBoxLayout *l = new QHBoxLayout;
+    QPushButton *pushButton;
+    QString str("pushButton %1");
+    QWidget *widget = new QWidget(this);
+    for (unsigned int i = 0; i < imgs.size(); i++) {
+        pushButton = new QPushButton(widget);
+        pushButton->setMinimumSize(256, 144);
+        pushButton->setMaximumSize(256, 144);
+        pushButton->setObjectName(str.arg(i));
+        QPixmap scaledPixmap = imgs[i].img->scaled(QSize(256, 144), Qt::KeepAspectRatio);
+        pushButton->setIcon(QIcon(scaledPixmap));
+        pushButton->setIconSize(QSize(240, 135));
+        connect(pushButton, SIGNAL(clicked()), this, SLOT(openEditor()));
+        l->addWidget(pushButton);
+    }
+    widget->setLayout(l);
+    ui->scrollArea->setWidget(widget);
+	if (!imgResult.isNull()) {
+		QPixmap scaledPixmap = imgResult.scaled(QSize(560, 315), Qt::KeepAspectRatio);
+		ui->compositeImage->setPixmap(scaledPixmap);
+	}
 }
 
-void MainWindow::openImage(){
-QString filename;
-filename=QFileDialog::getOpenFileName(this,tr("选择图像"),"",tr("Images (*.png *.bmp *.jpg)"));
-if(filename.isEmpty()){
-    return;
-}
-else{
-    QImage *img=new QImage;
-    if(! ( img->load(filename) ) ){
-        QMessageBox::information(this,tr("打开图像失败"),tr("打开图像失败!"));
-        delete img;
+void MainWindow::openImages() {
+    QStringList filenames;
+    filenames = QFileDialog::getOpenFileNames(this, tr("选择图像"), "", tr("Images (*.png *.bmp *.jpg)"));
+    if (filenames.isEmpty()) {
         return;
     }
-    QPixmap pix=QPixmap::fromImage(*img);
-    Image newImg(&pix);
-    imgs.push_back(newImg);
-    QPixmap scaledPixmap=pix.scaled(QSize(560,315),Qt::KeepAspectRatio);
-    ui->curImage->setPixmap(scaledPixmap);
-    curId=imgs.size()-1;
-    displayImages();
-    ui->remove->setDisabled(false);
-    ui->removeAll->setDisabled(false);
-    ui->generate->setDisabled(false);
-    ui->startEdit->setDisabled(false);
-}
-}
-
-void MainWindow::receiveEdit(QPixmap *p){
-if(p->cacheKey()!=imgs[curId].img->cacheKey()){
-    imgs[curId].setImageEdit(p);
-    setUIImageEditActionsDisabled(false);
-}else{
-    if(imgs[curId].isEdited()){
-        deleteCurrentImageEdit();
+    for(int i=0;i<filenames.size();i++){
+        QImage *img = new QImage;
+        if (!(img->load(filenames[i]))) {
+            cout << "Cannot open " << filenames[i].toStdString() << "." << endl;
+            delete img;
+            continue;
+        }
+        QPixmap pix = QPixmap::fromImage(*img);
+        Image newImg(&pix);
+        imgs.push_back(newImg);
     }
-}
-}
-
-void MainWindow::viewEdit(){
-if(isEdit){
-   ui->viewEdit->setText(tr("查看编辑"));
-   isEdit=false;
-   QPixmap scaledPixmap=imgs[curId].img->scaled(QSize(560,315),Qt::KeepAspectRatio);
-   ui->curImage->setPixmap(scaledPixmap);
-}else{
-    ui->viewEdit->setText(tr("退出查看n"));
-    isEdit=true;
-    QPixmap scaledPixmap=imgs[curId].imgEdit->scaled(QSize(560,315),Qt::KeepAspectRatio);
-    ui->curImage->setPixmap(scaledPixmap);
-}
-}
-
-void MainWindow::deleteCurrentImageEdit(){
-imgs[curId].deleteImageEdit();
-isEdit=false;
-ui->viewEdit->setText(tr("查看编辑"));
-QPixmap scaledPixmap=imgs[curId].img->scaled(QSize(560,315),Qt::KeepAspectRatio);
-ui->curImage->setPixmap(scaledPixmap);
-int count=0;
-for(unsigned int i=0;i<imgs.size();i++){
-    if(imgs[i].isEdited()){
-        count++;
-    }
-}
-if(count==0){
-    setUIImageEditActionsDisabled(true);
-}
-}
-
-void MainWindow::deleteAllImageEdits(){
-isEdit=false;
-ui->viewEdit->setText(tr("查看编辑"));
-QPixmap scaledPixmap=imgs[curId].img->scaled(QSize(560,315),Qt::KeepAspectRatio);
-ui->curImage->setPixmap(scaledPixmap);
-setUIImageEditActionsDisabled(true);
-for(unsigned int i=0;i<imgs.size();i++){
-    imgs[i].deleteImageEdit();
-}
+	displayImages();
+	ui->remove->setDisabled(false);
+	ui->removeAll->setDisabled(false);
+	ui->generate->setDisabled(false);
+	ui->changeBase->setDisabled(false);
+    deleteTempFiles();
 }
 
 void MainWindow::removeCurrentImage(){
-imgs.erase(imgs.begin()+curId);
-if((unsigned int)curId>=imgs.size()){
-    curId--;
-}
-if(curId<0){
-    init();
-    return;
-}
-if(isEdit){
-    QPixmap scaledPixmap=imgs[curId].imgEdit->scaled(QSize(560,315),Qt::KeepAspectRatio);
-    ui->curImage->setPixmap(scaledPixmap);
-}else{
-    QPixmap scaledPixmap=imgs[curId].img->scaled(QSize(560,315),Qt::KeepAspectRatio);
-    ui->curImage->setPixmap(scaledPixmap);
-}
-displayImages();
+	if (imgs.size() == 1) {
+		init();
+		return;
+	}
+	if (editorOpened) {
+		iedit->close();
+	}
+    imgs.erase(imgs.begin()+curId);
+    if((unsigned int)curId>=imgs.size()){
+        curId--;
+    }
+    displayImages();
 }
 
 void MainWindow::removeAllImages(){
-init();
-}
-
-void MainWindow::saveImageEdit(){
-QString filename;
-filename=QFileDialog::getSaveFileName(this,tr("Save files"),"",tr("Images (*.png *.bmp *.jpg)"));
-if (filename.isEmpty()) {
-    return;
-}
-else {
-    imgs[curId].imgEdit->save(filename);
-}
+    init();
 }
 
 void MainWindow::showUserHelp(){
-QMessageBox::information(this,tr("使用说明"),tr("应用开发中，请耐心等待."));
+    QMessageBox::information(this,tr("使用说明"),tr("应用开发中，请耐心等待."));
 }
 
 void MainWindow::showAboutUs(){
-QMessageBox::information(this,tr("关于我们"),tr("作者：wxw,lz,wzh"));
+    QMessageBox::information(this,tr("关于我们"),tr("作者：wxw,lz,wzh"));
 }
 
-Mat MainWindow::difference(Mat m1, Mat m2) {
-if (m1.rows != m2.rows || m1.cols != m2.cols || m1.channels() != m2.channels()) {
-    return Mat();
+void MainWindow::openImageResult() {
+	if (!imgResult.isNull()) {
+		viewer = new ImageEditor();
+		Image tmp = Image(&imgResult);
+		viewer->setImageOnEditor(tmp);
+		viewer->disableEdit();
+		viewer->show();
+	}
 }
-Mat result(m1.rows, m1.cols, CV_8UC1);
-result.setTo(0);
-int thres = 0;
-for (int i = 0; i < m1.rows; i++) {
-    for (int j = 0; j < m1.cols; j++) {
-        int diff = 0;
-        for (int c = 0; c < m1.channels(); c++) {
-            diff += abs(m1.at<uchar>(i, j*m1.channels() + c) - m2.at<uchar>(i, j*m2.channels() + c));
-        }
-        if (diff > thres) {
-            result.at<uchar>(i, j) = 255;
-        }
+
+void MainWindow::saveImageResult() {
+	if (imgResult.isNull()) {
+		return;
+	}
+	QString filename;
+	filename = QFileDialog::getSaveFileName(this, tr("保存图像"), "", tr("Images (*.png *.bmp *.jpg)"));
+	if (filename.isEmpty()) {
+		return;
+	}
+	imgResult.save(filename);
+}
+
+void MainWindow::closeEvent(QCloseEvent *) {
+    if (editorOpened) {
+        iedit->close();
     }
-}
-return result;
 }
 
 Mat MainWindow::read(string path) {
-Mat res = imread(path);
-Mat out;
-cv::resize(res, out, Size(res.cols/2, res.rows/2), INTER_AREA);
-return out;
+    Mat res = imread(path);
+    Mat out;
+    int ratio = 1;
+    cv::resize(res, out, Size(res.cols / ratio, res.rows / ratio), INTER_AREA);
+    return out;
+}
+void MainWindow::deleteTempFiles() {
+    if (!remove((directory + logName).toStdString().c_str())) {
+        cout << "Remove file " << (directory + logName).toStdString() << endl;
+    }
+    if (!remove((directory + imgResultName).toStdString().c_str())) {
+        cout << "Remove file " << (directory + imgResultName).toStdString() << endl;
+    }
+    QString imgNameTmpl("*_tmp.jpg");
+    QString editNameTmpl("*_edit.jpg");
+    QString labelNameTmpl("*_label.bmp");
+    for (int i = 0; i < 100; i++) {
+        QString num = QString::number(i, 10);
+        QString imgName = imgNameTmpl;
+        QString editName = editNameTmpl;
+        QString labelName= labelNameTmpl;
+        imgName.replace(0, 1, num);
+        editName.replace(0, 1, num);
+        labelName.replace(0, 1, num);
+        if (!remove((directory + imgName).toStdString().c_str())) {
+            cout << "Remove file " << (directory + imgName).toStdString() << endl;
+        }
+        if (!remove((directory + editName).toStdString().c_str())) {
+            cout << "Remove file " << (directory + editName).toStdString() << endl;
+        }
+        if (!remove((directory + labelName).toStdString().c_str())) {
+            cout << "Remove file " << (directory + labelName).toStdString() << endl;
+        }
+    }
+}
+
+void MainWindow::receiveEdit(QPixmap *edit, QPixmap *label) {
+    if (edit->cacheKey() != imgs[curId].imgEdit->cacheKey()) {
+		imgs[curId].setImageEdit(edit, label);
+    }
 }
 
 void MainWindow::checkGenerateImage(){
-/*
- * input you file name first,
- * set up a special simbol for checking whether process finished,
- * if the process does not finish then wait,
- * if the process finishes then read the image result and stop the timer.
- *
- */
-QString path = "/Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/";
-    QString logName(path+"finish.txt");
-    QString imgResultName(path+"compositeimage.png");
-
-    FILE *fp = fopen(logName.toStdString().c_str(), "r");
+	FILE *fp = fopen((directory + logName).toStdString().c_str(), "r");
     if(fp==NULL){
-        printf("Cannot open file!\n");
         printf("no detect\n");
         return;
     }
@@ -315,126 +303,82 @@ QString path = "/Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMonta
     // Get file content
 
     if( /*finished condition*/ true ){
-        QImage *img=new QImage;
+        QImage *img = new QImage;
         printf("detect\n");
-        if(! ( img->load(imgResultName) ) ){
-            QMessageBox::information(this,tr("Fatal Error"),tr("Can not open image result!"));
+        if(! ( img->load(directory+imgResultName) ) ){
+//            QMessageBox::information(this,tr("Fatal Error"),tr("Can not open image result!"));
             delete img;
             return;
         }
-        QPixmap pix=QPixmap::fromImage(*img);
-        iedit=new ImageEditor();
-        iedit->setImage(&pix);
-        iedit->disableEdit();
-        iedit->show();
+		imgResult = QPixmap::fromImage(*img);
+        QPixmap scaledPixmap = imgResult.scaled(QSize(560, 315), Qt::KeepAspectRatio);
+        ui->compositeImage->setPixmap(scaledPixmap);
+		ui->saveResult->setDisabled(false);
+		ui->viewResult->setDisabled(false);
         timer->stop();
         cout << "Timer stops" << endl;
     }
 }
 
 void MainWindow::generatePoisson(){
-//    QString imgname("*_tmp.jpg");
-//    QString editname("*_edit.jpg");
-//    Mat MatImages[imgs.size()];
-//    for(unsigned int i=0;i<imgs.size();i++){
-//        QString num=QString::number(i+1,10);
-//        imgname.replace(0,1,num);
-//        editname.replace(0,1,num);
-//         imgs[i].img->save("/Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/PhotoMontage/PhotoMontage"+imgname);
-//         imgs[i].imgEdit->save("/Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/PhotoMontage/PhotoMontage"+editname);
+    deleteTempFiles();
+	if (editorOpened) {
+		iedit->close();
+	}
+    QString filePath = "/Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/";
+    QString imgnametmpl("*_tmp.jpg");
+    QString editnametmpl("*_edit.jpg");
+    QString labelnametmpl("*_label.bmp");
+    for(int i=0;i<imgs.size();i++){
+            QString num=QString::number(i, 10);
+            QString imgname = imgnametmpl;
+            imgname.replace(0,1,num);
+            imgs[i].img->save(directory+imgname);
+            if(imgs[i].isEdited()){
+                QString editname = editnametmpl;
+                QString labelname = labelnametmpl;
+                editname.replace(0,1,num);
+                labelname.replace(0,1,num);
+                imgs[i].imgEdit->save(directory + editname);
+                imgs[i].imgLabel->save(directory + labelname);
+            }
+        }
 
-//        imgs[i].img->save(imgname);
-//        imgs[i].imgEdit->save(editname);
-//    }
-QString imgname("*_tmp.jpg");
-QString editname("*_edit.jpg");
-QString labelName("*_label.bmp");
-QString directory("/Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/");
-QString param1,param2;
-for(unsigned int i=0;i<imgs.size();i++){
-    QString num=QString::number(i+1,10);
-    imgname.replace(0,1,num);
-    editname.replace(0,1,num);
-    labelName.replace(0,1,num);
-    param1 += " "+imgname;
-    param2 += " "+param2;
-    labelName.replace(0,1,num);
-    imgs[i].img->save(directory+imgname);
-    imgs[i].imgEdit->save(directory+editname);
-    Mat cvImg=read((directory+imgname).toStdString());
-    Mat cvEdit=read((directory+editname).toStdString());
-    Mat cvLabel=difference(cvImg,cvEdit);
-    imwrite((directory+labelName).toStdString(),cvLabel);
+    QString param1, param2,param3;
+	param3 = QString::number(mode, 10);
+    if(mode == 0 || mode == 8){
+		for (int i = 0; i < imgs.size(); i++) {
+
+                param1 += " " + directory + QString::number(i, 10) + "_tmp.jpg";
+                param2 += " " + directory + QString::number(i, 10) + "_label.bmp ";
+        }
+    }
+    else if(mode == 3){
+        for (int i = 0; i < imgs.size(); i++) {
+                param1 += " " + directory + QString::number(i, 10) + "_tmp.jpg";
+                if(imgs[i].isEdited()){
+                    param2 += " " + directory + QString::number(i, 10) + "_label.bmp ";
+                }
+                else{
+                    param2 += " PLATE ";
+                }
+        }
+    }
+    else {
+        cout<<"qt in mode 6"<<endl;
+        for (int i = 0; i < imgs.size(); i++) {
+                param1 += " " + directory + QString::number(i, 10) + "_tmp.jpg";
+        }
+    }
+    timer->start(timeSlot);
+    cout << "Timer starts" << endl;
+    cout<<param1.toStdString()<<endl;
+    cout<<param2.toStdString()<<endl;
+	cout << "param3 = " << param3.toStdString() << endl;
+    if(param_text.size() == 0){
+        param_text = "0";
+    }
+    cout<<"user coefficient:"<<param_text.toStdString()<<endl;
+    QProcess::startDetached(directory+"project_cml "+" "+ param_text+" "+param3+" "+param1+" "+param2);
+    //QProcess::startDetached("/Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/project_cml "+param1+param2);
 }
-timer->start(timeSlot);
-cout << "Timer starts" << endl;
-
-QProcess::startDetached(directory+"project_cml "+param1+param2);
-}
-
-//    vector<Mat> images;
-//    vector<Mat> labels;
-//    QString preimagename = "*.JPG";
-//    QString preeditname = "*.bmp";
-//    for (unsigned int i = 0; i < imgs.size(); i++) {
-//        QString num = QString::number(i + 1, 10);
-//        imgname.replace(0, 1, num);
-//        editname.replace(0, 1, num);
-//        Mat src = read(imgname.toStdString());
-//        Mat edit = read(editname.toStdString());
-//        Mat dst = difference(src, edit);
-//        images.push_back(src);
-//        labels.push_back(dst);
-    /*
-    QString number = QString::number(i, 10);
-    preimagename.replace(0, 1, number);
-    preeditname.replace(0, 1, number);
-    Mat preimage = read(preimagename.toStdString());
-    Mat preedit = read(preeditname.toStdString());
-    images.push_back(preimage);
-    labels.push_back(preedit);*/
-//    }
-
-// Output labels
-//  QString diffname = "*_diff.jpg";
-//  for (unsigned int i = 0; i < labels.size(); i++) {
-//      QString num = QString::number(i + 1, 10);
-//      diffname.replace(0, 1, num);
-//      imwrite(diffname.toStdString(), labels[i]);
-//  }
-//    cout<<"asdasd"<<endl;
-//    Mat label(images[0].rows, images[0].cols, CV_8SC1);
-//    label.setTo(PhotoMontage::undefined);
-//    int height = images[0].rows;
-//    int width = images[0].cols;
-//     for (unsigned int i = 0; i < imgs.size(); i++) {
-//        QString num = QString::number(i + 1, 10);
-//        imgname.replace(0, 1, num);
-//        editname.replace(0, 1, num);
-//        remove(imgname.toStdString().c_str());
-//        remove(editname.toStdString().c_str());
-//    }
-
-//    for (int labelIdx = 0; labelIdx < images.size(); labelIdx++) {
-//        for (int y = 0; y < height; y++) {
-//            for (int x = 0; x < width; x++) {
-//                if (/*labels[labelIdx].at<uchar>(y, x) > 0*/
-//                    labels[labelIdx].at<Vec3b>(y, x)(0) > 0) {
-//                    label.at<uchar>(y, x) = labelIdx;
-//                }
-//            }
-//        }
-//    }
-
-
-//    PhotoMontage PM;
-//    PM.Run(images, label,mode);
-//    for (unsigned int i = 0; i < imgs.size(); i++) {
-//        QString num = QString::number(i + 1, 10);
-//        imgname.replace(0, 1, num);
-//        editname.replace(0, 1, num);
-//        remove(imgname.toStdString().c_str());
-//        remove(editname.toStdString().c_str());
-//    }
-//}
-

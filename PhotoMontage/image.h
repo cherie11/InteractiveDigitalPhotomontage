@@ -2,19 +2,21 @@
 #define IMAGE_H
 
 #include <QPixmap>
+#include <opencv2/opencv.hpp>
+using namespace cv;
 
 class Image
 {
 public:
-    Image();
+	Image();
     Image(QPixmap *);
     QPixmap *img;
     QPixmap *imgEdit;
+	QPixmap *imgLabel;
     bool isEdited();
-    void setImageEdit(QPixmap *);
+	void setImage(QPixmap *);
+    void setImageEdit(QPixmap *, QPixmap *);
     void deleteImageEdit();
-private:
-    bool edited;
 };
 
 #endif // IMAGE_H

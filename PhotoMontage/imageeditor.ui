@@ -21,13 +21,85 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>193</width>
+     <width>191</width>
      <height>31</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QPushButton" name="saveBtn">
+     <widget class="QPushButton" name="plusBtn">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>28</width>
+        <height>28</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>28</width>
+        <height>28</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>18</pointsize>
+        <weight>10</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 87 18pt &quot;Arial&quot;;</string>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="minusBtn">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>28</width>
+        <height>28</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>28</width>
+        <height>28</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 18pt &quot;Arial&quot;;</string>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="colorBtn">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="minimumSize">
        <size>
         <width>28</width>
@@ -42,10 +114,6 @@
       </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="resources.qrc">
-        <normaloff>:/new/src/save.png</normaloff>:/new/src/save.png</iconset>
       </property>
      </widget>
     </item>
@@ -53,102 +121,43 @@
      <widget class="QPushButton" name="clearBtn">
       <property name="minimumSize">
        <size>
-        <width>28</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>28</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="resources.qrc">
-        <normaloff>:/new/src/reload.png</normaloff>:/new/src/reload.png</iconset>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="colorBtn">
-      <property name="minimumSize">
-       <size>
-        <width>28</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>28</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="minimumSize">
-       <size>
-        <width>39</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>39</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>线宽：</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QSpinBox" name="widthSpinBox">
-      <property name="minimumSize">
-       <size>
         <width>40</width>
-        <height>22</height>
+        <height>28</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>40</width>
-        <height>22</height>
+        <height>28</height>
        </size>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <property name="text">
+       <string>重置</string>
       </property>
-      <property name="buttonSymbols">
-       <enum>QAbstractSpinBox::UpDownArrows</enum>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="saveBtn">
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>28</height>
+       </size>
       </property>
-      <property name="minimum">
-       <number>1</number>
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>28</height>
+       </size>
       </property>
-      <property name="maximum">
-       <number>30</number>
-      </property>
-      <property name="value">
-       <number>8</number>
+      <property name="text">
+       <string>保存</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

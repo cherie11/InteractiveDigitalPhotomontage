@@ -15,9 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,11 +25,11 @@ class Ui_ImageEditor
 public:
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
-    QPushButton *saveBtn;
-    QPushButton *clearBtn;
+    QPushButton *plusBtn;
+    QPushButton *minusBtn;
     QPushButton *colorBtn;
-    QLabel *label;
-    QSpinBox *widthSpinBox;
+    QPushButton *clearBtn;
+    QPushButton *saveBtn;
 
     void setupUi(QWidget *ImageEditor)
     {
@@ -41,56 +39,63 @@ public:
         ImageEditor->resize(394, 356);
         horizontalLayoutWidget = new QWidget(ImageEditor);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(0, 0, 193, 31));
+        horizontalLayoutWidget->setGeometry(QRect(0, 0, 191, 31));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        saveBtn = new QPushButton(horizontalLayoutWidget);
-        saveBtn->setObjectName(QStringLiteral("saveBtn"));
-        saveBtn->setMinimumSize(QSize(28, 28));
-        saveBtn->setMaximumSize(QSize(28, 28));
-        QIcon icon;
-        icon.addFile(QStringLiteral(":/new/src/save.png"), QSize(), QIcon::Normal, QIcon::Off);
-        saveBtn->setIcon(icon);
+        plusBtn = new QPushButton(horizontalLayoutWidget);
+        plusBtn->setObjectName(QStringLiteral("plusBtn"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(plusBtn->sizePolicy().hasHeightForWidth());
+        plusBtn->setSizePolicy(sizePolicy);
+        plusBtn->setMinimumSize(QSize(28, 28));
+        plusBtn->setMaximumSize(QSize(28, 28));
+        QFont font;
+        font.setFamily(QStringLiteral("Arial"));
+        font.setPointSize(18);
+        font.setBold(false);
+        font.setItalic(false);
+        font.setUnderline(false);
+        font.setWeight(10);
+        plusBtn->setFont(font);
+        plusBtn->setStyleSheet(QStringLiteral("font: 87 18pt \"Arial\";"));
 
-        horizontalLayout->addWidget(saveBtn);
+        horizontalLayout->addWidget(plusBtn);
 
-        clearBtn = new QPushButton(horizontalLayoutWidget);
-        clearBtn->setObjectName(QStringLiteral("clearBtn"));
-        clearBtn->setMinimumSize(QSize(28, 28));
-        clearBtn->setMaximumSize(QSize(28, 28));
-        QIcon icon1;
-        icon1.addFile(QStringLiteral(":/new/src/reload.png"), QSize(), QIcon::Normal, QIcon::Off);
-        clearBtn->setIcon(icon1);
+        minusBtn = new QPushButton(horizontalLayoutWidget);
+        minusBtn->setObjectName(QStringLiteral("minusBtn"));
+        sizePolicy.setHeightForWidth(minusBtn->sizePolicy().hasHeightForWidth());
+        minusBtn->setSizePolicy(sizePolicy);
+        minusBtn->setMinimumSize(QSize(28, 28));
+        minusBtn->setMaximumSize(QSize(28, 28));
+        minusBtn->setStyleSheet(QStringLiteral("font: 18pt \"Arial\";"));
 
-        horizontalLayout->addWidget(clearBtn);
+        horizontalLayout->addWidget(minusBtn);
 
         colorBtn = new QPushButton(horizontalLayoutWidget);
         colorBtn->setObjectName(QStringLiteral("colorBtn"));
+        sizePolicy.setHeightForWidth(colorBtn->sizePolicy().hasHeightForWidth());
+        colorBtn->setSizePolicy(sizePolicy);
         colorBtn->setMinimumSize(QSize(28, 28));
         colorBtn->setMaximumSize(QSize(28, 28));
 
         horizontalLayout->addWidget(colorBtn);
 
-        label = new QLabel(horizontalLayoutWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setMinimumSize(QSize(39, 28));
-        label->setMaximumSize(QSize(39, 28));
-        label->setStyleSheet(QStringLiteral("background-color: rgb(255, 255, 255);"));
+        clearBtn = new QPushButton(horizontalLayoutWidget);
+        clearBtn->setObjectName(QStringLiteral("clearBtn"));
+        clearBtn->setMinimumSize(QSize(40, 28));
+        clearBtn->setMaximumSize(QSize(40, 28));
 
-        horizontalLayout->addWidget(label);
+        horizontalLayout->addWidget(clearBtn);
 
-        widthSpinBox = new QSpinBox(horizontalLayoutWidget);
-        widthSpinBox->setObjectName(QStringLiteral("widthSpinBox"));
-        widthSpinBox->setMinimumSize(QSize(40, 22));
-        widthSpinBox->setMaximumSize(QSize(40, 22));
-        widthSpinBox->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        widthSpinBox->setButtonSymbols(QAbstractSpinBox::UpDownArrows);
-        widthSpinBox->setMinimum(1);
-        widthSpinBox->setMaximum(20);
-        widthSpinBox->setValue(1);
+        saveBtn = new QPushButton(horizontalLayoutWidget);
+        saveBtn->setObjectName(QStringLiteral("saveBtn"));
+        saveBtn->setMinimumSize(QSize(40, 28));
+        saveBtn->setMaximumSize(QSize(40, 28));
 
-        horizontalLayout->addWidget(widthSpinBox);
+        horizontalLayout->addWidget(saveBtn);
 
 
         retranslateUi(ImageEditor);
@@ -101,10 +106,11 @@ public:
     void retranslateUi(QWidget *ImageEditor)
     {
         ImageEditor->setWindowTitle(QApplication::translate("ImageEditor", "\347\274\226\350\276\221\345\231\250", Q_NULLPTR));
-        saveBtn->setText(QString());
-        clearBtn->setText(QString());
+        plusBtn->setText(QApplication::translate("ImageEditor", "+", Q_NULLPTR));
+        minusBtn->setText(QApplication::translate("ImageEditor", "-", Q_NULLPTR));
         colorBtn->setText(QString());
-        label->setText(QApplication::translate("ImageEditor", "\347\272\277\345\256\275\357\274\232", Q_NULLPTR));
+        clearBtn->setText(QApplication::translate("ImageEditor", "\351\207\215\347\275\256", Q_NULLPTR));
+        saveBtn->setText(QApplication::translate("ImageEditor", "\344\277\235\345\255\230", Q_NULLPTR));
     } // retranslateUi
 
 };

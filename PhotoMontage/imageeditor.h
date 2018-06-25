@@ -19,29 +19,33 @@ class ImageEditor : public QWidget
 public:
     explicit ImageEditor(QWidget *parent = 0);
     ~ImageEditor();
-    void setImage(QPixmap *);
+    void setImageOnEditor(Image);
     void setColor(QColor c);
     void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);
+	void mouseReleaseEvent(QMouseEvent *event);
     void paintEvent(QPaintEvent*);
+	void closeEvent(QCloseEvent *event);
     void disableEdit();
 
 private:
     Ui::ImageEditor *ui;
-    QPixmap *pix;
-    QPixmap *img;
+	QCursor cursor;
+	Image image;
     QPoint startPos;
-    QColor color;
+	QColor color;
     int weight;
-    QPoint origin=QPoint(0,0);
     bool enableEdit;
+	bool startPainting;
 
 signals:
-    void sendEdit(QPixmap *);
+	void sendEdit(QPixmap *, QPixmap *);
+	void editorClosed();
 
 public slots:
     void ShowColor();
-    void setWidth(int);
+	void increaseWidth();
+	void decreaseWidth();
     void clear();
     void saveEdit();
 };

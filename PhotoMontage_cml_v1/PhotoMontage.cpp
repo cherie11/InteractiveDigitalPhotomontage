@@ -15,8 +15,13 @@ using namespace std;
 
 const double large_penalty = 1000.0;
 Mat _data;
-
-
+int currentMode = 0;
+double user_coefficient = 0;
+double euc_dist(const Vec3b & a, const Vec3b & b)
+{
+    Vec3b double_diff = a - b;
+    return sqrt( double_diff[0] * double_diff[0] + double_diff[1] * double_diff[1] + double_diff[2] * double_diff[2]);
+}
 
 struct __ExtraData
 {
@@ -61,9 +66,10 @@ double dataFn_user(int p, int l, void *data) {
     int x = p % width;
     
     assert(l >= 0);
+    
     if (Label.at<char>(y,x) != PhotoMontage::undefined) // user specified
     {
-        if ( Label.at<char>(y,x) == l)   // 0 if u=L(p)
+        if ( Label.at<char>(y,x)!=0&&Label.at<char>(y,x) == l)   // 0 if u=L(p)
         {
             return 0.0;
         }
@@ -268,26 +274,47 @@ double dataFn_erase(int p, int l, void *data) {
     double l_pixel=0;
     int cnt=0;
     double penalty=0;
+    double dis,max_dis=0;
+    
+
     if (Label.at<char>(y,x) != PhotoMontage::undefined) // user specified
     {
-        cv::Vec3b u_pixel=img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x); // user specified label
-        cv::Vec3b l_pixel=img_vec[l].at<Vec3b>(y,x);   //label by experiment
-        penalty=cv::norm(l_pixel-u_pixel);
+       //  for(auto p: img_vec){
+       //  //std::cout<<img_vec[l].at<Vec3b>(y,x)<<std::endl;
+       //      dis=euc_dist(img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x),p.at<Vec3b>(y,x));
+       //      assert(dis>=0);
+       //      max_dis=dis>max_dis?dis:max_dis;
+       //  }
+       //  dis=euc_dist(img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x), img_vec[l].at<Vec3b>(y,x));
+       //  assert(max_dis>=dis);
+    
+
+       //  cv::Vec3b u_pixel=img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x); // user specified label
+       //  cv::Vec3b l_pixel=img_vec[l].at<Vec3b>(y,x);   //label by experiment
         
-        return -penalty;   // make label approach
+       //  penalty=max_dis-dis;
+       // // std::cout<<penalty<<std::endl;
+       //  return penalty*10000;   // make label approach
+
+
+        if (Label.at<char>(y,x) != l)   // 0 if u=L(p)
+        {
+            return 0.0;
+        }
+        else
+        {
+            return large_penalty/5;
+        }
     }
     else
-    {
-        return large_penalty;
+    {   
+
+        return large_penalty/5;
     }
     
 
  }
-double euc_dist(const Vec3b & a, const Vec3b & b)
-{
-    Vec3b double_diff = a - b;
-    return sqrt( double_diff[0] * double_diff[0] + double_diff[1] * double_diff[1] + double_diff[2] * double_diff[2]);
-}
+
 double dataFn_max_diff(int p, int l, void *data) {
     //Max Difference selection
     __ExtraData * ptr_extra_data = (__ExtraData *)data;
@@ -357,7 +384,7 @@ double dataFn_contrast(int p, int l, void *data) {
         //size must be odd
     }
     
-    return -1000*diff;
+    return -10*diff;
 }
 
 
@@ -484,8 +511,27 @@ double smoothFn(int p, int q, int lp, int lq, void * data)
     }
     
     diff_grad1=sqrt(diff_grad1);
+    int coefficient = 10;
+    if(user_coefficient > 0){
+        coefficient*=user_coefficient;
+    }
+    else{
+        if(currentMode == 0 || currentMode == 8){
+            coefficient*=2.5;
+        }
+        else if(currentMode == 3){
+            coefficient*=1;
+        }
+        else if(currentMode == 6){
+            coefficient *=5 ;
+        } 
+        else if (currentMode == 4){
+            coefficient *= 10;
+        }
+    }
+    
     //std::cout<<(X_term1 + X_term2)<<" "<<diff_grad<<"  "<<diff_grad1<<std::endl;
-    return (X_term1 + X_term2)*10+diff_grad*10+diff_grad1*10;
+    return ((X_term1 + X_term2) * coefficient + diff_grad * coefficient + diff_grad1 * coefficient)/5;
 #endif
     
     
@@ -520,13 +566,20 @@ double smoothFn(int p, int q, int lp, int lq, void * data)
 }
 
 
-void PhotoMontage:: Run( const std::vector<cv::Mat> & Images, const cv::Mat & Label,int mode)
+void PhotoMontage:: Run( const std::vector<cv::Mat> & Images, const cv::Mat & Label,int mode,double user_coe)
 {
     assert(Images[0].rows == Label.rows);
     assert(Images[0].cols == Label.cols);
-    
+    currentMode = mode;   
+    user_coefficient = user_coe; 
     cout<<"mode is:"<<mode<<endl;
     BuildSolveMRF( Images, Label,mode);
+    // for(int i=0;i<Label.rows;i++){
+    //     for(int j=0;j<Label.cols;j++){
+    //         std::cout<<int(Label.at<char>(j,i))<<" ";
+    //     }
+    //     std::cout<<std::endl;
+    // }
     
 }
 
@@ -549,16 +602,21 @@ void PhotoMontage::BuildSolveMRF( const std::vector<cv::Mat> & Images, const cv:
     
     try
     {
-        //VisResultLabelMap(Label,n_label);
+        VisResultLabelMap(Label,n_label);
         
         GCoptimizationGridGraph *gc = new GCoptimizationGridGraph(width,height,n_imgs);
         
         // set up the needed data to pass to function for the data costs
         switch(mode){
+             case USER_SPECIFY_P:
+                std::cout<<"Using user specified penalty with possion!"<<std::endl;
+                gc->setDataCost(&dataFn_user,&extra_data);
+                break;
             case USER_SPECIFY:
                 std::cout<<"Using user specified penalty!"<<std::endl;
                 gc->setDataCost(&dataFn_user,&extra_data);
                 break;
+
             case MAX_LUMIN:
                 std::cout<<"Using max luminance penalty!"<<std::endl;
                 gc->setDataCost(&dataFn_max_lumin,&extra_data);
@@ -605,7 +663,7 @@ void PhotoMontage::BuildSolveMRF( const std::vector<cv::Mat> & Images, const cv:
         gc->setSmoothCost(&smoothFn,&extra_data);
         
         printf("\nBefore optimization energy is %f",gc->compute_energy());
-        gc->swap(2);// run expansion for 2 iterations. For swap use gc->swap(num_iterations);
+        gc->swap(10);// run expansion for 2 iterations. For swap use gc->swap(num_iterations);
         printf("\nAfter optimization energy is %f",gc->compute_energy());
         
         Mat result_label(height, width, CV_8UC1);
@@ -622,8 +680,14 @@ void PhotoMontage::BuildSolveMRF( const std::vector<cv::Mat> & Images, const cv:
         delete gc;
         
         VisResultLabelMap( result_label, n_label );
-        VisCompositeImage( result_label, Images );
-        BuildSolveGradientFusion(Images, result_label);
+        if(currentMode == 8 ){
+            BuildSolveGradientFusion(Images, result_label);
+        }
+        else{
+            VisCompositeImage( result_label, Images );
+
+        }
+        // BuildSolveGradientFusion(Images, result_label);
         
         
         
@@ -703,7 +767,7 @@ void PhotoMontage::BuildSolveGradientFusion( const std::vector<cv::Mat> & Images
     
     //cout<<color_result<<endl;
     
-    imwrite("colorresult.png",color_result);
+    imwrite("compositeimage.png",color_result);
     
 }
 
@@ -730,12 +794,15 @@ void PhotoMontage::VisResultLabelMap( const cv::Mat & ResultLabel, int n_label )
     {
         for (int x = 0 ; x < width ; x++)
         {
-            color_result_map.at<Vec3b>(y,x) = label_colors[ResultLabel.at<uchar>(y,x)];
+            if(int(ResultLabel.at<char>(y,x))==undefined){
+                color_result_map.at<Vec3b>(y,x)=0;
+            }
+            else{
+            color_result_map.at<Vec3b>(y,x) = label_colors[ResultLabel.at<uchar>(y,x)];}
         }
     }
     
     imwrite("resultlabels.png",color_result_map);
-    //waitKey(-1);
 }
 
 void PhotoMontage::VisCompositeImage( const cv::Mat & ResultLabel, const std::vector<cv::Mat> & Images )
@@ -752,10 +819,10 @@ void PhotoMontage::VisCompositeImage( const cv::Mat & ResultLabel, const std::ve
         }
     }
     
-    //imshow("compositeimage",composite_image);
+    // imshow("compositeimage",composite_image);
     imwrite("compositeimage.png",composite_image);
 
-    //waitKey(-1);
+    // waitKey(-1);
 }
 
 cv::flann::Index *  PhotoMontage::AddInertiaConstraint( const cv::Mat & Label )
@@ -870,4 +937,3 @@ void PhotoMontage::SolveChannel( int channel_idx, int constraint, const cv::Mat 
     
     ///请同学们填写这里的代码，这里就是实验中所说的单颜色通道的Gradient Fusion
 }
-
