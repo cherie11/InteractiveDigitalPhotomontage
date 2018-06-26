@@ -44,6 +44,9 @@ struct __ExtraData
  pixel in a pixels span.
  (3)Erase : the color most different from that of the current composite
  Input:
+ (4)Minimum (maximum) likelihood
+ (5)Maximum contrast
+ (6)Maximum different
  p: coordinate
  l: label to be verified
  data: struct of images and labels
@@ -372,20 +375,9 @@ double dataFn_contrast(int p, int l, void *data) {
     assert(l >= 0);
 
     double diff = 0;
-    // cout<<"here"<<endl;
 
-    for(int i=0; i < img_vec.size();i++){
-        if(i != l){
-            continue;
-        }
-        // Mat tmp3,tmp5;
-        // GaussianBlur(img_vec[i],tmp3,Size(3,3),0);
-        // GaussianBlur(img_vec[i],tmp5,Size(5,5),0);
-        if(i == l){
-            diff += cv::norm(GaussianBlurImages[i].at<Vec3b>(y,x),img_vec[i].at<Vec3b>(y,x));
-        }
-        //size must be odd
-    }
+    diff = cv::norm(GaussianBlurImages[l].at<Vec3b>(y,x),img_vec[l].at<Vec3b>(y,x));
+
     
     return -10*diff;
 }
