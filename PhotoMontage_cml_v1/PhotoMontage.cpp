@@ -277,25 +277,28 @@ double dataFn_erase(int p, int l, void *data) {
     double dis,max_dis=0;
     
 
-    if (Label.at<char>(y,x) != PhotoMontage::undefined) // user specified
+     if (Label.at<char>(y,x) != PhotoMontage::undefined) // user specified
     {
-       //  for(auto p: img_vec){
-       //  //std::cout<<img_vec[l].at<Vec3b>(y,x)<<std::endl;
-       //      dis=euc_dist(img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x),p.at<Vec3b>(y,x));
-       //      assert(dis>=0);
-       //      max_dis=dis>max_dis?dis:max_dis;
-       //  }
-       //  dis=euc_dist(img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x), img_vec[l].at<Vec3b>(y,x));
-       //  assert(max_dis>=dis);
+    //     for(auto p: img_vec){
+    //     //std::cout<<img_vec[l].at<Vec3b>(y,x)<<std::endl;
+    //         dis=norm(img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x),p.at<Vec3b>(y,x));
+    //         assert(dis>=0);
+    //         max_dis=dis>max_dis?dis:max_dis;
+    //     }
+    //     dis=norm(img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x), img_vec[l].at<Vec3b>(y,x));
+    //     assert(max_dis>=dis);
     
 
-       //  cv::Vec3b u_pixel=img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x); // user specified label
-       //  cv::Vec3b l_pixel=img_vec[l].at<Vec3b>(y,x);   //label by experiment
+    //     cv::Vec3b u_pixel=img_vec[Label.at<char>(y,x)].at<Vec3b>(y,x); // user specified label
+    //     cv::Vec3b l_pixel=img_vec[l].at<Vec3b>(y,x);   //label by experiment
         
-       //  penalty=max_dis-dis;
-       // // std::cout<<penalty<<std::endl;
-       //  return penalty*10000;   // make label approach
-
+    //     penalty=max_dis-dis;
+    //    // std::cout<<penalty<<std::endl;
+    //     return -dis;   // make label approach
+    // }
+    // else{
+    //     return large_penalty;
+    // }
 
         if (Label.at<char>(y,x) != l)   // 0 if u=L(p)
         {
@@ -303,13 +306,13 @@ double dataFn_erase(int p, int l, void *data) {
         }
         else
         {
-            return large_penalty/5;
+            return large_penalty;
         }
     }
     else
     {   
 
-        return large_penalty/5;
+        return large_penalty;
     }
     
 
@@ -510,26 +513,24 @@ double smoothFn(int p, int q, int lp, int lq, void * data)
         diff_grad1+=pow(grad_p[k]-grad_q[k],2);
     }
     
+
     diff_grad1=sqrt(diff_grad1);
-    int coefficient = 2;
+    int coefficient = 10;
     if(user_coefficient > 0){
         coefficient*=user_coefficient;
     }
     else{
         if(currentMode == 0 || currentMode == 8){
-            coefficient*=2.5;
+            coefficient*=2;
         }
-        else if(currentMode == 3){
-            coefficient*=1;
+        else if (currentMode == 4){
+            coefficient *= 5;
         }
-        else if(currentMode == 6){
-            coefficient *=5 ;
-        } 
-        else if (currentMode == 4 || currentMode == MAX_DIFF){
-            coefficient *= 10;
+        else if(currentMode == ERASE){
+            coefficient /=2;
         }
     }
-    
+
     //std::cout<<(X_term1 + X_term2)<<" "<<diff_grad<<"  "<<diff_grad1<<std::endl;
     return ((X_term1 + X_term2) * coefficient + diff_grad * coefficient + diff_grad1 * coefficient);
 #endif
@@ -680,7 +681,7 @@ void PhotoMontage::BuildSolveMRF( const std::vector<cv::Mat> & Images, const cv:
         delete gc;
         
         VisResultLabelMap( result_label, n_label );
-        if(currentMode == 8 ){
+        if(currentMode == 8 ||currentMode == 7 ||currentMode == CONTRAST){
             BuildSolveGradientFusion(Images, result_label);
         }
         else{
@@ -819,10 +820,10 @@ void PhotoMontage::VisCompositeImage( const cv::Mat & ResultLabel, const std::ve
         }
     }
     
-    // imshow("compositeimage",composite_image);
+    //imshow("compositeimage",composite_image);
     imwrite("compositeimage.png",composite_image);
 
-    // waitKey(-1);
+    //waitKey(-1);
 }
 
 cv::flann::Index *  PhotoMontage::AddInertiaConstraint( const cv::Mat & Label )

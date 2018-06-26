@@ -1,2 +1,3 @@
-CMakeFiles/
+/CMakeFiles/
+.DS_Store
 CMakeCache.txt

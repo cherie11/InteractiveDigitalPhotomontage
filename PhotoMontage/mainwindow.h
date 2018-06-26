@@ -39,7 +39,7 @@ private:
 	bool editorOpened;
     QTimer *timer;
 	const int timeSlot = 2000;
-    const QString directory = "/Users/apple/Desktop/计算摄影学/qt_montage/build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/";
+    const QString directory = "../build-PhotoMontage-Desktop_Qt_5_8_0_clang_64bit-Default/";
 	//const QString directory = "C:/Study/tmp/";
 	const QString logName = "finish.txt";
     const QString imgResultName = "compositeimage.png";

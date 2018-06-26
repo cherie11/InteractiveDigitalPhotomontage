@@ -1,6 +1,6 @@
-The system is: Darwin - 14.5.0 - x86_64
+The system is: Darwin - 15.5.0 - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
 Build flags: 
 Id flags:  
 
@@ -10,10 +10,10 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is AppleClang, found in "/Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/3.8.2/CompilerIdC/a.out"
+The C compiler identification is AppleClang, found in "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/3.11.4/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
 Build flags: 
 Id flags:  
 
@@ -23,35 +23,36 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is AppleClang, found in "/Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/3.8.2/CompilerIdCXX/a.out"
+The CXX compiler identification is AppleClang, found in "/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/3.11.4/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_05613/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_05613.dir/build.make CMakeFiles/cmTC_05613.dir/build
-Building C object CMakeFiles/cmTC_05613.dir/testCCompiler.c.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_05613.dir/testCCompiler.c.o   -c /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_05613
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05613.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_05613.dir/testCCompiler.c.o  -o cmTC_05613 
+Run Build Command:"/usr/bin/make" "cmTC_36050/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_36050.dir/build.make CMakeFiles/cmTC_36050.dir/build
+Building C object CMakeFiles/cmTC_36050.dir/testCCompiler.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_36050.dir/testCCompiler.c.o   -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_36050
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36050.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_36050.dir/testCCompiler.c.o  -o cmTC_36050 
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_966eb/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_966eb.dir/build.make CMakeFiles/cmTC_966eb.dir/build
-Building C object CMakeFiles/cmTC_966eb.dir/CMakeCCompilerABI.c.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_966eb.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.8.2/share/cmake/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_966eb
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_966eb.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_966eb.dir/CMakeCCompilerABI.c.o  -o cmTC_966eb 
-Apple LLVM version 7.0.0 (clang-700.1.74)
-Target: x86_64-apple-darwin14.5.0
+Run Build Command:"/usr/bin/make" "cmTC_9554d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_9554d.dir/build.make CMakeFiles/cmTC_9554d.dir/build
+Building C object CMakeFiles/cmTC_9554d.dir/CMakeCCompilerABI.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_9554d.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.11.4/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_9554d
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9554d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_9554d.dir/CMakeCCompilerABI.c.o  -o cmTC_9554d 
+Apple LLVM version 8.0.0 (clang-800.0.38)
+Target: x86_64-apple-darwin15.5.0
 Thread model: posix
- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.10.0 -o cmTC_966eb -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_966eb.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a
-@(#)PROGRAM:ld  PROJECT:ld64-253.3
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_9554d -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9554d.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-274.1
 configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
 Library search paths:
 	/usr/lib
@@ -62,39 +63,40 @@ Framework search paths:
 
 
 Parsed C implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp]
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_966eb/fast"]
-  ignore line: [/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_966eb.dir/build.make CMakeFiles/cmTC_966eb.dir/build]
-  ignore line: [Building C object CMakeFiles/cmTC_966eb.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_966eb.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.8.2/share/cmake/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_966eb]
-  ignore line: [/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_966eb.dir/link.txt --verbose=1]
-  ignore line: [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_966eb.dir/CMakeCCompilerABI.c.o  -o cmTC_966eb ]
-  ignore line: [Apple LLVM version 7.0.0 (clang-700.1.74)]
-  ignore line: [Target: x86_64-apple-darwin14.5.0]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_9554d/fast"]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_9554d.dir/build.make CMakeFiles/cmTC_9554d.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_9554d.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_9554d.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.11.4/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_9554d]
+  ignore line: [/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9554d.dir/link.txt --verbose=1]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_9554d.dir/CMakeCCompilerABI.c.o  -o cmTC_9554d ]
+  ignore line: [Apple LLVM version 8.0.0 (clang-800.0.38)]
+  ignore line: [Target: x86_64-apple-darwin15.5.0]
   ignore line: [Thread model: posix]
-  link line: [ "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.10.0 -o cmTC_966eb -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_966eb.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
-    arg [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+  ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_9554d -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9554d.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
     arg [-demangle] ==> ignore
     arg [-dynamic] ==> ignore
     arg [-arch] ==> ignore
     arg [x86_64] ==> ignore
     arg [-macosx_version_min] ==> ignore
-    arg [10.10.0] ==> ignore
+    arg [10.11.0] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_966eb] ==> ignore
+    arg [cmTC_9554d] ==> ignore
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_966eb.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_9554d.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lSystem] ==> lib [System]
-    arg [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a]
   Library search paths: [;/usr/lib;/usr/local/lib]
   Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
   remove lib [System]
-  remove lib [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+  remove lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a]
   collapse library dir [/usr/lib] ==> [/usr/lib]
   collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
   collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
@@ -107,15 +109,15 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0be0b/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_0be0b.dir/build.make CMakeFiles/cmTC_0be0b.dir/build
-Building C object CMakeFiles/cmTC_0be0b.dir/feature_tests.c.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_0be0b.dir/feature_tests.c.o   -c /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.c
-Linking C executable cmTC_0be0b
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0be0b.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_0be0b.dir/feature_tests.c.o  -o cmTC_0be0b 
+Run Build Command:"/usr/bin/make" "cmTC_29d9f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_29d9f.dir/build.make CMakeFiles/cmTC_29d9f.dir/build
+Building C object CMakeFiles/cmTC_29d9f.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_29d9f.dir/feature_tests.c.o   -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.c
+Linking C executable cmTC_29d9f
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29d9f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_29d9f.dir/feature_tests.c.o  -o cmTC_29d9f 
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -125,15 +127,15 @@ Linking C executable cmTC_0be0b
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_33ca2/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_33ca2.dir/build.make CMakeFiles/cmTC_33ca2.dir/build
-Building C object CMakeFiles/cmTC_33ca2.dir/feature_tests.c.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_33ca2.dir/feature_tests.c.o   -c /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.c
-Linking C executable cmTC_33ca2
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33ca2.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_33ca2.dir/feature_tests.c.o  -o cmTC_33ca2 
+Run Build Command:"/usr/bin/make" "cmTC_6ef0f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_6ef0f.dir/build.make CMakeFiles/cmTC_6ef0f.dir/build
+Building C object CMakeFiles/cmTC_6ef0f.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_6ef0f.dir/feature_tests.c.o   -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6ef0f
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ef0f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_6ef0f.dir/feature_tests.c.o  -o cmTC_6ef0f 
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -143,15 +145,15 @@ Linking C executable cmTC_33ca2
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fdc8a/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_fdc8a.dir/build.make CMakeFiles/cmTC_fdc8a.dir/build
-Building C object CMakeFiles/cmTC_fdc8a.dir/feature_tests.c.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_fdc8a.dir/feature_tests.c.o   -c /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.c
-Linking C executable cmTC_fdc8a
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fdc8a.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_fdc8a.dir/feature_tests.c.o  -o cmTC_fdc8a 
+Run Build Command:"/usr/bin/make" "cmTC_59450/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_59450.dir/build.make CMakeFiles/cmTC_59450.dir/build
+Building C object CMakeFiles/cmTC_59450.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_59450.dir/feature_tests.c.o   -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.c
+Linking C executable cmTC_59450
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59450.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_59450.dir/feature_tests.c.o  -o cmTC_59450 
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -159,32 +161,33 @@ Linking C executable cmTC_fdc8a
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d3532/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_d3532.dir/build.make CMakeFiles/cmTC_d3532.dir/build
-Building CXX object CMakeFiles/cmTC_d3532.dir/testCXXCompiler.cxx.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -o CMakeFiles/cmTC_d3532.dir/testCXXCompiler.cxx.o -c /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_d3532
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3532.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_d3532.dir/testCXXCompiler.cxx.o  -o cmTC_d3532 
+Run Build Command:"/usr/bin/make" "cmTC_4dab4/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_4dab4.dir/build.make CMakeFiles/cmTC_4dab4.dir/build
+Building CXX object CMakeFiles/cmTC_4dab4.dir/testCXXCompiler.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -o CMakeFiles/cmTC_4dab4.dir/testCXXCompiler.cxx.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_4dab4
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4dab4.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_4dab4.dir/testCXXCompiler.cxx.o  -o cmTC_4dab4 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4cfe7/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_4cfe7.dir/build.make CMakeFiles/cmTC_4cfe7.dir/build
-Building CXX object CMakeFiles/cmTC_4cfe7.dir/CMakeCXXCompilerABI.cpp.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -o CMakeFiles/cmTC_4cfe7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.8.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_4cfe7
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4cfe7.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_4cfe7.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_4cfe7 
-Apple LLVM version 7.0.0 (clang-700.1.74)
-Target: x86_64-apple-darwin14.5.0
+Run Build Command:"/usr/bin/make" "cmTC_b4ee9/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_b4ee9.dir/build.make CMakeFiles/cmTC_b4ee9.dir/build
+Building CXX object CMakeFiles/cmTC_b4ee9.dir/CMakeCXXCompilerABI.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -o CMakeFiles/cmTC_b4ee9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.11.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_b4ee9
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4ee9.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_b4ee9.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b4ee9 
+Apple LLVM version 8.0.0 (clang-800.0.38)
+Target: x86_64-apple-darwin15.5.0
 Thread model: posix
- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.10.0 -o cmTC_4cfe7 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_4cfe7.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a
-@(#)PROGRAM:ld  PROJECT:ld64-253.3
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_b4ee9 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_b4ee9.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-274.1
 configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
 Library search paths:
 	/usr/lib
@@ -195,40 +198,41 @@ Framework search paths:
 
 
 Parsed CXX implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp]
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_4cfe7/fast"]
-  ignore line: [/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_4cfe7.dir/build.make CMakeFiles/cmTC_4cfe7.dir/build]
-  ignore line: [Building CXX object CMakeFiles/cmTC_4cfe7.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -o CMakeFiles/cmTC_4cfe7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.8.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_4cfe7]
-  ignore line: [/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4cfe7.dir/link.txt --verbose=1]
-  ignore line: [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_4cfe7.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_4cfe7 ]
-  ignore line: [Apple LLVM version 7.0.0 (clang-700.1.74)]
-  ignore line: [Target: x86_64-apple-darwin14.5.0]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_b4ee9/fast"]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_b4ee9.dir/build.make CMakeFiles/cmTC_b4ee9.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_b4ee9.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -o CMakeFiles/cmTC_b4ee9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.11.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_b4ee9]
+  ignore line: [/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4ee9.dir/link.txt --verbose=1]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_b4ee9.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b4ee9 ]
+  ignore line: [Apple LLVM version 8.0.0 (clang-800.0.38)]
+  ignore line: [Target: x86_64-apple-darwin15.5.0]
   ignore line: [Thread model: posix]
-  link line: [ "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.10.0 -o cmTC_4cfe7 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_4cfe7.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
-    arg [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+  ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_b4ee9 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_b4ee9.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
     arg [-demangle] ==> ignore
     arg [-dynamic] ==> ignore
     arg [-arch] ==> ignore
     arg [x86_64] ==> ignore
     arg [-macosx_version_min] ==> ignore
-    arg [10.10.0] ==> ignore
+    arg [10.11.0] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_4cfe7] ==> ignore
+    arg [cmTC_b4ee9] ==> ignore
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_4cfe7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_b4ee9.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lc++] ==> lib [c++]
     arg [-lSystem] ==> lib [System]
-    arg [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a]
   Library search paths: [;/usr/lib;/usr/local/lib]
   Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
   remove lib [System]
-  remove lib [/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/lib/darwin/libclang_rt.osx.a]
+  remove lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/lib/darwin/libclang_rt.osx.a]
   collapse library dir [/usr/lib] ==> [/usr/lib]
   collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
   collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
@@ -241,15 +245,15 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_77bae/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_77bae.dir/build.make CMakeFiles/cmTC_77bae.dir/build
-Building CXX object CMakeFiles/cmTC_77bae.dir/feature_tests.cxx.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_77bae.dir/feature_tests.cxx.o -c /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_77bae
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77bae.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_77bae.dir/feature_tests.cxx.o  -o cmTC_77bae 
+Run Build Command:"/usr/bin/make" "cmTC_91375/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_91375.dir/build.make CMakeFiles/cmTC_91375.dir/build
+Building CXX object CMakeFiles/cmTC_91375.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_91375.dir/feature_tests.cxx.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_91375
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91375.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_91375.dir/feature_tests.cxx.o  -o cmTC_91375 
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -300,7 +304,7 @@ Linking CXX executable cmTC_77bae
     Feature record: CXX_FEATURE:1cxx_static_assert
     Feature record: CXX_FEATURE:1cxx_strong_enums
     Feature record: CXX_FEATURE:1cxx_template_template_parameters
-    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_thread_local
     Feature record: CXX_FEATURE:1cxx_trailing_return_types
     Feature record: CXX_FEATURE:1cxx_unicode_literals
     Feature record: CXX_FEATURE:1cxx_uniform_initialization
@@ -312,15 +316,15 @@ Linking CXX executable cmTC_77bae
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_737ff/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_737ff.dir/build.make CMakeFiles/cmTC_737ff.dir/build
-Building CXX object CMakeFiles/cmTC_737ff.dir/feature_tests.cxx.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_737ff.dir/feature_tests.cxx.o -c /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_737ff
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_737ff.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_737ff.dir/feature_tests.cxx.o  -o cmTC_737ff 
+Run Build Command:"/usr/bin/make" "cmTC_be824/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_be824.dir/build.make CMakeFiles/cmTC_be824.dir/build
+Building CXX object CMakeFiles/cmTC_be824.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_be824.dir/feature_tests.cxx.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_be824
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be824.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_be824.dir/feature_tests.cxx.o  -o cmTC_be824 
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -371,7 +375,7 @@ Linking CXX executable cmTC_737ff
     Feature record: CXX_FEATURE:1cxx_static_assert
     Feature record: CXX_FEATURE:1cxx_strong_enums
     Feature record: CXX_FEATURE:1cxx_template_template_parameters
-    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_thread_local
     Feature record: CXX_FEATURE:1cxx_trailing_return_types
     Feature record: CXX_FEATURE:1cxx_unicode_literals
     Feature record: CXX_FEATURE:1cxx_uniform_initialization
@@ -383,15 +387,15 @@ Linking CXX executable cmTC_737ff
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fee5b/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_fee5b.dir/build.make CMakeFiles/cmTC_fee5b.dir/build
-Building CXX object CMakeFiles/cmTC_fee5b.dir/feature_tests.cxx.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_fee5b.dir/feature_tests.cxx.o -c /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_fee5b
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fee5b.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_fee5b.dir/feature_tests.cxx.o  -o cmTC_fee5b 
+Run Build Command:"/usr/bin/make" "cmTC_09978/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_09978.dir/build.make CMakeFiles/cmTC_09978.dir/build
+Building CXX object CMakeFiles/cmTC_09978.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_09978.dir/feature_tests.cxx.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_09978
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_09978.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_09978.dir/feature_tests.cxx.o  -o cmTC_09978 
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -442,7 +446,7 @@ Linking CXX executable cmTC_fee5b
     Feature record: CXX_FEATURE:1cxx_static_assert
     Feature record: CXX_FEATURE:1cxx_strong_enums
     Feature record: CXX_FEATURE:1cxx_template_template_parameters
-    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_thread_local
     Feature record: CXX_FEATURE:1cxx_trailing_return_types
     Feature record: CXX_FEATURE:1cxx_unicode_literals
     Feature record: CXX_FEATURE:1cxx_uniform_initialization
@@ -454,15 +458,15 @@ Linking CXX executable cmTC_fee5b
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
+Change Dir: /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b9361/fast"
-/Applications/Xcode-beta.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_b9361.dir/build.make CMakeFiles/cmTC_b9361.dir/build
-Building CXX object CMakeFiles/cmTC_b9361.dir/feature_tests.cxx.o
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_b9361.dir/feature_tests.cxx.o -c /Users/apple/Desktop/计算摄影学/qt_montage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_b9361
-/usr/local/Cellar/cmake/3.8.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9361.dir/link.txt --verbose=1
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_b9361.dir/feature_tests.cxx.o  -o cmTC_b9361 
+Run Build Command:"/usr/bin/make" "cmTC_69c75/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_69c75.dir/build.make CMakeFiles/cmTC_69c75.dir/build
+Building CXX object CMakeFiles/cmTC_69c75.dir/feature_tests.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_69c75.dir/feature_tests.cxx.o -c /Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage_cml_v1/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_69c75
+/usr/local/Cellar/cmake/3.11.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69c75.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_69c75.dir/feature_tests.cxx.o  -o cmTC_69c75 
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

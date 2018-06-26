@@ -97,6 +97,7 @@ void MainWindow::init(){
     ui->remove->setShortcut(QKeySequence::Delete);
 	ui->viewResult->setShortcut(Qt::Key_V);
 	ui->saveResult->setShortcut(QKeySequence::Save);
+    ui->removeAll->setShortcut(Qt::Key_D);
 
     ui->mode0->setText("USER_SPECIFY *");
     ui->remove->setDisabled(true);

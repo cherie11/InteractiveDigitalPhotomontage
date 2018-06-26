@@ -20,9 +20,7 @@ Mat read(String path){
     // imshow("s",res);
     // printf("%s\n",path.c_str() );
     int ratio=1;
-    if(mode ==6){
-        ratio = 2;
-    }
+
     cout<<path<<" "<<res.cols/ratio<<","<<res.rows/ratio<<endl;
     Mat out;
     resize(res, out, Size(res.cols/ratio,res.rows/ratio),INTER_AREA);
