@@ -1,4 +1,0 @@
-/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/rebuild_cache.dir
-/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/edit_cache.dir
-/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project.dir
-/Users/cheriewang/git/Data/InteractiveDigitalPhotomontage/PhotoMontage/CMakeFiles/project_autogen.dir

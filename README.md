@@ -3,6 +3,7 @@
 ## Dependency
   * Qt 5.8.0
   * opencv 3.3.1
+  * cmake
   
 ## Directory Structure
 ----------
